@@ -1,0 +1,17 @@
+.base-link {
+	transition: color 0.3s;
+
+	&_type_primary {
+		color: var(--base-link-text-primary);
+
+		&:focus {
+			text-decoration: underline;
+		}
+
+		@media(hover) {
+			&:hover:not(:active, :focus) {
+				text-decoration: underline;
+			}
+		}
+	}
+}

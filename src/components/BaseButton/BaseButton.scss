@@ -1,0 +1,32 @@
+.base-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+
+	padding: 12px;
+
+	transition: background 0.3s, opacity 0.3s;
+
+	&_type_primary {
+		color: var(--base-button-text-primary);
+
+		background: var(--base-button-background-primary);
+		border-radius: 24px;
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
+		&:focus:not(:disabled) {
+			background: var(--base-button-background-primary-hover);
+		}
+
+		@media(hover) {
+			&:hover:not(:disabled, :active, :focus) {
+				background: var(--base-button-background-primary-hover);
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<label class="base-input">
+	<span clas="base-input__label base-text XS">{{ label }}</span>
+	<input
+		class="base-input__input base-text S {{#if error}}base-input__input_negative{{/if}}"
+		placeholder="{{ placeholder }}"
+		name="{{ name }}"
+		type="{{ type }}"
+		id="{{ id }}"
+	/>
+	<span class="base-input__error-text base-text XS">{{ error }}</span>
+</label>

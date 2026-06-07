@@ -1,0 +1,31 @@
+<main class="sign-up">
+	<header class="sign-up__header">
+		<img
+			class="sign-up__header-image rect-size"
+			src="/logo.svg"
+			alt="Логотип мессенджера «ME Чат»"
+		/>
+		<span class="sign-up__header-text base-text L Bold">ME Чат</span>
+	</header>
+	<div class="sign-up__content">
+		<div class="sign-up__welcome-block welcome-block">
+			<h1 class="welcome-block__title base-text XL Medium">Регистрация</h1>
+			<span class="welcome-block__subtext base-text M">Создайте аккаунт, чтобы начать общение.</span>
+		</div>
+		<form class="sign-up__form form">
+			{{#each config}}
+				{{> base-input }}
+			{{/each}}
+
+			{{> base-button 
+				text="Войти" 
+				type="primary" 
+			}}
+		</form>
+		<span class="sign-up__subtext form-subtext">
+			Есть аккаунт?
+			{{> base-link text="Войти" type="primary" href="#" data-href="signIn" }}
+		</span>
+	</div>
+	<aside class="sign-up__aside"></aside>
+</div>

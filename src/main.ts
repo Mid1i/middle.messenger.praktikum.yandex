@@ -29,7 +29,7 @@ class App {
     private setupClick() {
         if (!this.appElement) return;
 
-        this.appElement.addEventListener("click", (event: PointerEvent) => {
+        this.appElement.addEventListener("click", (event: Event) => {
             const dataHref = (event.target as HTMLElement)?.getAttribute("data-href");
             if (!dataHref) return;
 

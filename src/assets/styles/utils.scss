@@ -1,0 +1,22 @@
+.rect-size {
+    --_size: var(--size, 24px);
+
+    min-width: var(--_size);
+    min-height: var(--_size);
+    width: var(--_size);
+    height: var(--_size);
+    max-width: var(--_size);
+    max-height: var(--_size);
+    aspect-ratio: 1;
+}
+
+.masked-block {
+    --_url: var(--url);
+
+    mask: var(--_url);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    background-color: currentColor;
+}

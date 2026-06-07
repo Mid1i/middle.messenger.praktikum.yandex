@@ -1,0 +1,58 @@
+*, 
+*::after,
+*::before {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}	
+
+*:focus, 
+*:active {
+	outline: none;
+	text-decoration: none;
+}
+
+html, 
+body {
+	background: var(--background-base-primary);
+	color: var(--text-base-primary);
+	font-family: "Roboto Flex", sans-serif;
+	overflow-x: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+a, 
+a:hover,
+a:visited {
+	text-decoration: none;
+}
+
+input, 
+button,
+textarea {
+	background: transparent;
+	color: inherit;
+	font-family: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+
+	object-fit: cover;
+}
+
+#app {
+	height: 100%;
+	width: 100%;
+}

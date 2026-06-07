@@ -1,0 +1,50 @@
+.base-text {
+	--_font-size: var(--font-size, 16px);
+	--_line-height: var(--line-height, auto);
+	--_font-weight: var(--font-weight, 400);
+
+	font-family: "Roboto Flex", sans-serif;
+	font-size: var(--_font-size);
+	font-weight: var(--_font-weight);
+	line-height: var(--_line-height);
+}
+
+.Regular {
+	--font-weight: var(--Regular-font-weight);
+}
+
+.Medium {
+	--font-weight: var(--Medium-font-weight);
+}
+
+.Semibold {
+	--font-weight: var(--Semibold-font-weight);
+}
+
+.Bold {
+	--font-weight: var(--Bold-font-weight);
+}
+
+.XS {
+	--font-size: var(--XS-font-size);
+}
+
+.S {
+	--font-size: var(--S-font-size);
+}
+
+.M {
+	--font-size: var(--M-font-size);
+}
+
+.L {
+	--font-size: var(--L-font-size);
+}
+
+.XL {
+	--font-size: var(--XL-font-size);
+}
+
+.XXL {
+	--font-size: var(--XXL-font-size);
+}

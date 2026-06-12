@@ -4,12 +4,12 @@
 	&_type_primary {
 		color: var(--base-link-text-primary);
 
-		&:focus {
+		&:focus-visible {
 			text-decoration: underline;
 		}
 
 		@media(hover) {
-			&:hover:not(:active, :focus) {
+			&:hover:not(:active, :focus-visible) {
 				text-decoration: underline;
 			}
 		}

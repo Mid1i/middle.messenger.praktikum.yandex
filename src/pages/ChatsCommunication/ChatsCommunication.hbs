@@ -1,0 +1,89 @@
+<main class="chats-communication">
+	<aside class="chats-communication__panel">
+		<picture class="chats-communication__logo-wrapper rect-size">
+			<img
+				class="chats-communication__logo-image"
+				src="/logo.svg"
+				alt="Логотип мессенджера «ME Чат»"
+			/>
+		</picture>
+		<a 
+			class="chats-communication__profile-link" 
+			href="#" 
+			data-href="profile"
+			aria-label="Перейти в профиль"
+		>
+			{{> base-avatar alt="Профиль" url="#" }}
+		</a>
+	</aside>
+	<main class="chats-communication__content">
+		<section class="chats-communication__chats chats-section">
+			<header class="chats-section__header">
+				<h1 class="chats-section__title base-text L Medium">Чаты</h1>
+				{{> base-icon-button label="Новый чат" url="/icons/add.svg" }}
+			</header>
+			<div class="chats-section__search">
+				{{> base-input placeholder="Найти чат..." name="search" id="search" type="text" }}
+				<div class="chats-section__search-icon rect-size masked-block"></div>
+			</div>
+			<div class="chats-section__list">
+				{{#each config}}
+					{{> chats-list-item }}
+				{{/each}}
+			</div>
+		</section>
+		<section class="chats-communication__chat-window chat-window">
+			{{#with currentChat}}
+				<section class="chat-window__history">
+					<header class="chat-window__header">
+						<div class="chat-window__header-info">
+							{{> base-avatar alt="Аватар чата {{ title }}" url="{{ avatar }}" }}
+							<h3 class="chats-communication__title base-text L Medium">{{ title }}</h3>
+						</div>
+						{{> base-icon-button label="Открыть настройки чата" url="/icons/options.svg" }}
+					</header>
+					<main class="chat-window__content">
+						{{#each history}}
+							{{> chat-message this notYourself=(is-odd @index) }}
+						{{/each}}
+					</main>
+					<footer class="chat-window__footer">
+						<form class="chat-window__form">
+							<textarea 
+								class="chat-window__message-input base-text S"
+								placeholder="Сообщение"
+								name="message"
+								id="message"	
+							></textarea>
+							<button 
+								class="chat-window__attach-button rect-size" 
+								aria-label="Прикрепить вложение"
+								type="submit"	
+							>
+								<div class="chat-window__attach-icon rect-size masked-block"></div>
+							</button>
+							<button 
+								class="chat-window__send-button rect-size" 
+								aria-label="Отправить сообщение"
+								type="submit"	
+							>
+								<div class="chat-window__send-icon rect-size masked-block"></div>
+							</button>
+						</form>
+					</footer>
+				</section>
+			{{else}}
+				<div class="chat-window__empty">
+					<picture class="chat-window__empty-wrapper rect-size">
+						<img
+							class="chat-window__empty-image"
+							src="/logo-big.svg"
+							alt="Логотип мессенджера «ME Чат»"
+						/>
+					</picture>
+					<span class="chat-window__empty-text base-text M">Выберите чат, чтобы начать переписку.</span>
+				</div>
+			{{/with}}
+		</section>
+	</main>
+</main>

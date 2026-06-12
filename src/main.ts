@@ -4,16 +4,29 @@ import Handlebars from "handlebars";
 
 import "@/assets/styles/index.scss";
 
-import BaseInput from "@/components/BaseInput";
+import BaseAvatar from "@/components/BaseAvatar";
 import BaseButton from "@/components/BaseButton";
+import BaseIconButton from "@/components/BaseIconButton";
+import BaseInput from "@/components/BaseInput";
 import BaseLink from "@/components/BaseLink";
+import ChatMessage from "@/components/ChatMessage";
+import ChatsListItem from "@/components/ChatsListItem";
 
 import { PLUG_ITEMS } from "@/pages/WelcomePlug";
 import { PAGE_CONFIG } from "@/constants/plug";
 
-Handlebars.registerPartial("base-input", BaseInput); 
+import formatDate from "@/helpers/formatDate";
+
+Handlebars.registerPartial("base-avatar", BaseAvatar); 
 Handlebars.registerPartial("base-button", BaseButton); 
+Handlebars.registerPartial("base-icon-button", BaseIconButton); 
+Handlebars.registerPartial("base-input", BaseInput); 
 Handlebars.registerPartial("base-link", BaseLink); 
+Handlebars.registerPartial("chat-message", ChatMessage); 
+Handlebars.registerPartial("chats-list-item", ChatsListItem); 
+
+Handlebars.registerHelper("is-odd", (index: number) => index % 2 !== 0);
+Handlebars.registerHelper("format-date", formatDate);
 
 class App {
     private state: PageType; 

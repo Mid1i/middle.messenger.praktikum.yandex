@@ -5,8 +5,14 @@ export type PageType =
 	| "signIn"
 	| "signUp"
 	| "notFound"
-	| "serverError";
+	| "serverError"
+	| "chats";
 
-export interface IGlobalState {
-	currentPage: PageType;
+export interface IUser {
+	first_name: string;
+	second_name: string;
+	avatar: string;
+	email: string;
+	login: string;
+	phone: string;
 };

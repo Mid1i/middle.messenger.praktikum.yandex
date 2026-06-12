@@ -1,0 +1,287 @@
+.chats-communication {
+	display: flex;
+	align-items: stretch;
+
+	height: 100%;
+	width: 100%;
+
+	background: var(--background-base-secondary);
+
+	&__panel {
+		--base-avatar-size: 48px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 48px 36px 52px;
+	}
+
+	&__logo-wrapper {
+		--size: 34px;
+	}
+
+	&__logo-image {
+		object-fit: contain;
+	}
+
+	&__profile-link {
+		margin-top: auto;
+	}
+
+	&__content {
+		display: flex;
+		flex: 1 1 auto;
+		align-items: stretch;
+		gap: 16px;
+
+		padding: 16px;
+		padding-left: 0px;
+	}
+}
+
+.chats-section {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	height: 100%;
+	width: 384px;
+
+	padding: 16px 12px 0px;
+
+	background: var(--background-base-primary);
+	border-radius: 24px;
+
+	&__header {
+		--base-icon-button-size-button: 44px;
+		--base-icon-button-size-icon: 20px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 0px 12px;
+	}
+
+	&__search {
+		--base-input-height: 56px;
+		--base-input-border-radius: 24px;
+		--base-input-padding: 0px 8px 0px 56px;
+
+		position: relative;
+
+		padding: 0px 12px;
+	}
+
+	&__search-icon {
+		--size: 24px;
+		--url: url("/icons/search.svg");
+
+		position: absolute;
+		top: 50%;
+		left: 32px;
+
+		transform: translateY(-50%);
+
+		pointer-events: none;
+	}
+
+	&__list {
+		overflow: auto;
+
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		padding-bottom: 16px;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}
+
+.chat-window {
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	justify-content: center;
+
+	&__history {
+		display: flex;
+		flex-direction: column;
+
+		height: 100%;
+		width: 100%;
+
+		background: var(--background-base-primary);
+		border-radius: 24px;
+	}
+
+	&__header {
+		--base-icon-button-size-button: 32px;
+		--base-icon-button-size-icon: 20px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		padding: 24px 32px;
+
+		border-bottom: 1px solid var(--border-base-primary);
+	}
+
+	&__header-info {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__content {
+		overflow: auto;
+
+		align-items: flex-start;
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		gap: 16px;
+
+		padding: 16px 24px;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	&__footer {
+		padding: 16px 24px 24px;
+
+		border-top: 1px solid var(--border-base-primary);
+	}
+
+	&__form {
+		position: relative;
+
+		width: 100%;
+	}
+
+	&__message-input {
+		height: 48px;
+		width: 100%;
+
+		padding: 15px 46px;
+
+		background: transparent;
+		border: 1px solid var(--border-base-primary);
+		border-radius: 16px;
+
+		resize: none;
+
+		transition: background 0.3s, border-color 0.3s;
+
+		@media(hover) {
+			&:hover {
+				background: var(--base-input-background);
+				border-color: transparent;
+			}
+		}
+
+		&:focus-visible {
+			background: transparent;
+			border-color: var(--base-input-border-active); 
+		}
+	}
+
+	&__attach-button {
+		--size: 30px;
+
+		position: absolute;
+		left: 12px;
+		top: 9px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 12px;
+
+		transition: background 0.3s;
+
+		@media(hover) {
+			&:hover {
+				background: var(--background-button-primary-hover);
+			}
+		}
+
+		&:focus-visible {
+			background: var(--background-button-primary-hover);
+		}
+
+		&:active {
+			background: var(--background-button-primary-active);
+		}
+	}
+
+	&__attach-icon {
+		--size: 18px;
+		--url: url("/icons/attach.svg");
+	}
+
+	&__send-button {
+		--size: 30px;
+
+		position: absolute;
+		right: 12px;
+		top: 9px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background: var(--background-button-secondary);
+		border-radius: 12px;
+
+		color: var(--background-base-primary);
+
+		transition: background 0.3s;
+
+		@media(hover) {
+			&:hover {
+				background: var(--background-button-secondary-hover);
+			}
+		}
+
+		&:active {
+			background: var(--background-button-secondary-active);
+
+			color: var(--text-base-primary);
+		}
+	}
+
+	&__send-icon {
+		--size: 18px;
+		--url: url("/icons/send.svg");
+
+		color: inherit;
+	}
+
+	&__empty {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__empty-wrapper {
+		--size: 200px;
+	}
+
+	&__empty-image {
+		object-fit: contain;
+	}
+
+	&__empty-text {
+		color: var(--text-base-secondary);
+	}
+}

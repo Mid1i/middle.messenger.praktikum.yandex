@@ -19,12 +19,12 @@
 			opacity: 0.5;
 		}
 
-		&:focus:not(:disabled) {
+		&:focus-visible:not(:disabled) {
 			background: var(--base-button-background-primary-hover);
 		}
 
 		@media(hover) {
-			&:hover:not(:disabled, :active, :focus) {
+			&:hover:not(:disabled, :active, :focus-visible) {
 				background: var(--base-button-background-primary-hover);
 			}
 		}

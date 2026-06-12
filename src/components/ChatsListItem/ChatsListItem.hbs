@@ -1,0 +1,17 @@
+<button class="chats-list-item">
+	{{#with last_message}}
+		{{> base-avatar 
+			alt="Аватар пользователя {{ user.first_name }} {{ user.second_name }}" 
+			url="{{ ../avatar }}" 
+		}}
+		<div class="chats-list-item__content">
+			<span class="chats-list-item__title base-text S">{{ ../title }}</span>
+			<span class="chats-list-item__text base-text XS">
+				<b>{{user.first_name }}:</b> {{content }}
+			</span>
+		</div>
+		{{#if ../unread_count}}
+			<span class="chats-list-item__counter base-text XS rect-size">{{ ../unread_count }}</span>
+		{{/if}}
+	{{/with}}
+</button>

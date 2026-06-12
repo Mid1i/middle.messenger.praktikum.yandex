@@ -1,21 +1,5 @@
 <main class="chats-communication">
-	<aside class="chats-communication__panel">
-		<picture class="chats-communication__logo-wrapper rect-size">
-			<img
-				class="chats-communication__logo-image"
-				src="/logo.svg"
-				alt="Логотип мессенджера «ME Чат»"
-			/>
-		</picture>
-		<a 
-			class="chats-communication__profile-link" 
-			href="#" 
-			data-href="profile"
-			aria-label="Перейти в профиль"
-		>
-			{{> base-avatar alt="Профиль" url="#" }}
-		</a>
-	</aside>
+	{{> aside-panel }}
 	<main class="chats-communication__content">
 		<section class="chats-communication__chats chats-section">
 			<header class="chats-section__header">

@@ -7,28 +7,6 @@
 
 	background: var(--background-base-secondary);
 
-	&__panel {
-		--base-avatar-size: 48px;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-
-		padding: 48px 36px 52px;
-	}
-
-	&__logo-wrapper {
-		--size: 34px;
-	}
-
-	&__logo-image {
-		object-fit: contain;
-	}
-
-	&__profile-link {
-		margin-top: auto;
-	}
-
 	&__content {
 		display: flex;
 		flex: 1 1 auto;

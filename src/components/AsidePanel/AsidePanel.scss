@@ -1,0 +1,57 @@
+.aside-panel {
+	--base-avatar-size: 48px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+
+	padding: 48px 36px 52px;
+
+	&__logo-wrapper {
+		--size: 34px;
+	}
+
+	&__logo-image {
+		object-fit: contain;
+	}
+
+	&__chats-link {
+		width: 100%;
+
+		padding: 8px 24px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 24px;
+
+		transition: background 0.3s;
+
+		@media(hover) {
+			&:hover {
+				background: var(--background-button-primary-hover);
+			}
+		}
+
+		&:focus-visible {
+			background: var(--background-button-primary-hover);
+		}
+
+		&:active {
+			background: var(--background-button-primary-active);
+		}
+	}
+
+	&__chats-icon {
+		--size: 24px;
+		--url: url("/icons/chats.svg");
+
+		color: var(--text-base-primary);
+	}
+
+	&__profile-link {
+		margin-top: auto;
+	}
+}

@@ -4,6 +4,7 @@ import Handlebars from "handlebars";
 
 import "@/assets/styles/index.scss";
 
+import AsidePanel from "@/components/AsidePanel";
 import BaseAvatar from "@/components/BaseAvatar";
 import BaseButton from "@/components/BaseButton";
 import BaseIconButton from "@/components/BaseIconButton";
@@ -17,6 +18,7 @@ import { PAGE_CONFIG } from "@/constants/plug";
 
 import formatDate from "@/helpers/formatDate";
 
+Handlebars.registerPartial("aside-panel", AsidePanel); 
 Handlebars.registerPartial("base-avatar", BaseAvatar); 
 Handlebars.registerPartial("base-button", BaseButton); 
 Handlebars.registerPartial("base-icon-button", BaseIconButton); 

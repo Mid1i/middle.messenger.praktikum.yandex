@@ -1,0 +1,23 @@
+<div class="chat-message {{#if notYourself}} chat-message_not-yourself {{/if}}">
+	{{#if notYourself}}
+		{{#with user}}
+			{{> base-avatar 
+				alt="Аватар пользователя {{ user.first_name }} {{ user.second_name }}" 
+				url="{{ user.avatar }}" 
+			}}
+		{{/with}}
+	{{/if}}
+	<div class="chat-message__content">
+		<header class="chat-message__header">
+			<span class="chat-message__title base-text S Medium">
+				{{#if notYourself}}
+					{{ user.first_name }} {{ user.second_name }}
+				{{else}}
+					Вы
+				{{/if}}
+			</span>
+			<span class="chat-message__date base-text S">{{ format-date time }}</span>
+		</header>
+		<p class="chat-message__message-text {{#if notYourself}} chat-message__message-text_not-yourself {{/if}} base-text S">{{ content }}</p>
+	</div>
+</div>

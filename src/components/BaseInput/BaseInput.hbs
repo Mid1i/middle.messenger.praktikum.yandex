@@ -1,5 +1,7 @@
 <label class="base-input">
-	<span clas="base-input__label base-text XS">{{ label }}</span>
+	{{#if label}}
+		<span class="base-input__label base-text XS">{{ label }}</span>
+	{{/if}}
 	<input
 		class="base-input__input base-text S {{#if error}}base-input__input_negative{{/if}}"
 		placeholder="{{ placeholder }}"
@@ -7,5 +9,7 @@
 		type="{{ type }}"
 		id="{{ id }}"
 	/>
-	<span class="base-input__error-text base-text XS">{{ error }}</span>
+	{{#if error}}
+		<span class="base-input__error-text base-text XS">{{ error }}</span>
+	{{/if}}
 </label>

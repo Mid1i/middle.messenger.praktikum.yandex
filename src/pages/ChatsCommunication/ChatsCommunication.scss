@@ -32,14 +32,18 @@
 	border-radius: 24px;
 
 	&__header {
-		--base-icon-button-size-button: 44px;
-		--base-icon-button-size-icon: 20px;
+		--base-button-size: 44px;
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 
 		padding: 0px 12px;
+	}
+
+	&__add-icon {
+		--size: 20px;
+		--url: url("/icons/add.svg");
 	}
 
 	&__search {
@@ -98,9 +102,6 @@
 	}
 
 	&__header {
-		--base-icon-button-size-button: 32px;
-		--base-icon-button-size-icon: 20px;
-
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -114,6 +115,11 @@
 		display: flex;
 		align-items: center;
 		gap: 16px;
+	}
+
+	&__options-icon {
+		--size: 20px;
+		--url: url("/icons/options.svg");
 	}
 
 	&__content {
@@ -139,6 +145,8 @@
 	}
 
 	&__form {
+		--base-button-size: 30px;
+
 		position: relative;
 
 		width: 100%;
@@ -172,33 +180,9 @@
 	}
 
 	&__attach-button {
-		--size: 30px;
-
 		position: absolute;
 		left: 12px;
 		top: 9px;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		border-radius: 12px;
-
-		transition: background 0.3s;
-
-		@media(hover) {
-			&:hover {
-				background: var(--background-button-primary-hover);
-			}
-		}
-
-		&:focus-visible {
-			background: var(--background-button-primary-hover);
-		}
-
-		&:active {
-			background: var(--background-button-primary-active);
-		}
 	}
 
 	&__attach-icon {
@@ -207,34 +191,9 @@
 	}
 
 	&__send-button {
-		--size: 30px;
-
 		position: absolute;
 		right: 12px;
 		top: 9px;
-
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		background: var(--background-button-secondary);
-		border-radius: 12px;
-
-		color: var(--background-base-primary);
-
-		transition: background 0.3s;
-
-		@media(hover) {
-			&:hover {
-				background: var(--background-button-secondary-hover);
-			}
-		}
-
-		&:active {
-			background: var(--background-button-secondary-active);
-
-			color: var(--text-base-primary);
-		}
 	}
 
 	&__send-icon {

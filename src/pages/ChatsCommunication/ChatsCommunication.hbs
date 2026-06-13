@@ -1,13 +1,20 @@
 <main class="chats-communication">
-	{{> aside-panel }}
+	{{> aside-panel activePage="chats" }}
 	<main class="chats-communication__content">
 		<section class="chats-communication__chats chats-section">
 			<header class="chats-section__header">
 				<h1 class="chats-section__title base-text L Medium">Чаты</h1>
-				{{> base-icon-button label="Новый чат" url="/icons/add.svg" }}
+				{{#> base-button ariaLabel="Новый чат" type="secondary" }}
+					<div class="chats-section__add-icon rect-size masked-block"></div>
+				{{/base-button}}
 			</header>
 			<div class="chats-section__search">
-				{{> base-input placeholder="Найти чат..." name="search" id="search" type="text" }}
+				{{> base-input 
+					placeholder="Найти чат..." 
+					name="search" 
+					id="search" 
+					type="text" 
+				}}
 				<div class="chats-section__search-icon rect-size masked-block"></div>
 			</div>
 			<div class="chats-section__list">
@@ -22,9 +29,11 @@
 					<header class="chat-window__header">
 						<div class="chat-window__header-info">
 							{{> base-avatar alt="Аватар чата {{ title }}" url="{{ avatar }}" }}
-							<h3 class="chats-communication__title base-text L Medium">{{ title }}</h3>
+							<h3 class="chat-window__title base-text L Medium">{{ title }}</h3>
 						</div>
-						{{> base-icon-button label="Открыть настройки чата" url="/icons/options.svg" }}
+						{{#> base-button ariaLabel="Открыть настройки чата" type="secondary" }}
+							<div class="chat-window__options-icon rect-size masked-block"></div>
+						{{/base-button}}
 					</header>
 					<main class="chat-window__content">
 						{{#each history}}
@@ -39,20 +48,20 @@
 								name="message"
 								id="message"	
 							></textarea>
-							<button 
-								class="chat-window__attach-button rect-size" 
-								aria-label="Прикрепить вложение"
-								type="submit"	
-							>
+							{{#> base-button 
+								 ariaLabel="Прикрепить вложение"
+								 className="chat-window__attach-button" 
+								 type="tertiary" 
+							}}
 								<div class="chat-window__attach-icon rect-size masked-block"></div>
-							</button>
-							<button 
-								class="chat-window__send-button rect-size" 
-								aria-label="Отправить сообщение"
-								type="submit"	
-							>
+							{{/base-button}}
+							{{#> base-button
+								 ariaLabel="Отправить сообщение"
+								 className="chat-window__send-button"
+								 type="quaternary"
+							}}
 								<div class="chat-window__send-icon rect-size masked-block"></div>
-							</button>
+							{{/base-button}}
 						</form>
 					</footer>
 				</section>

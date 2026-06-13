@@ -7,6 +7,7 @@ export const CURRENT_USER: IUser = {
 	second_name: "Иванов",
 	login: "ivanivanov",
 	email: "example@mail.ru",
+	display_name: "Иван Иванов",
 	phone: "89876543210"
 };
 
@@ -17,14 +18,6 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		"id": "login",
 		"placeholder": "ivanivanov",
 		"defaultValue": CURRENT_USER.login,
-		"type": "text"
-	},
-	{
-		"label": "Email",
-		"name": "email",
-		"id": "email",
-		"placeholder": "example@yandex.ru",
-		"defaultValue": CURRENT_USER.email,
 		"type": "text"
 	},
 	{
@@ -41,6 +34,22 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		"id": "second_name",
 		"placeholder": "Иванов",
 		"defaultValue": CURRENT_USER.second_name,
+		"type": "text"
+	},
+	{
+		"label": "Отображаемое имя",
+		"name": "display_name",
+		"id": "display_name",
+		"placeholder": "Иван",
+		"defaultValue": CURRENT_USER.display_name,
+		"type": "text"
+	},
+	{
+		"label": "Email",
+		"name": "email",
+		"id": "email",
+		"placeholder": "example@yandex.ru",
+		"defaultValue": CURRENT_USER.email,
 		"type": "text"
 	},
 	{

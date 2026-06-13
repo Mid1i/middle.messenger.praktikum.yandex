@@ -20,7 +20,9 @@
 		</form>
 		<span class="sign-in__subtext form-subtext">
 			Нет аккаунта?
-			{{> base-link text="Зарегистрироваться" type="primary" href="#" data-href="signUp" }}
+			{{#> base-link href="#" data-href="signUp" }}
+				Зарегистрироваться
+			{{/base-link}}
 		</span>
 	</div>
 </div>

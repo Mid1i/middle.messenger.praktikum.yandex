@@ -23,7 +23,9 @@
 		</form>
 		<span class="sign-up__subtext form-subtext">
 			Есть аккаунт?
-			{{> base-link text="Войти" type="primary" href="#" data-href="signIn" }}
+			{{#> base-link href="#" data-href="signIn" }}
+				Войти
+			{{/base-link}}
 		</span>
 	</div>
 	<aside class="sign-up__aside"></aside>

@@ -1,5 +1,7 @@
 <main class="server-error">
 	<h1 class="server-error__title base-text XXL Bold">500</h1>
 	<span class="server-error__subtext base-text M">Мы уже фиксим</span>
-	{{> base-link text="Назад к чатам" href="#" type="primary" data-href="chats" }}
+	{{#> base-link href="#" data-href="chats" }}
+		Назад к чатам
+	{{/base-link}}
 </div>

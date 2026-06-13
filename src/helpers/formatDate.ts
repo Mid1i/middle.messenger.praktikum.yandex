@@ -42,4 +42,4 @@ export default function formatDate(dateString: string): string {
 	}
 
 	return `${FULL_DATE_FORMATTER.format(date)}, ${time}`;
-}
+};

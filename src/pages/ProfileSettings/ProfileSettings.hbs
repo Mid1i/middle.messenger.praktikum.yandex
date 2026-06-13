@@ -6,11 +6,11 @@
 				<div class="profile-settings__header-wrapper">
 					<button class="profile-settings__header-avatar" type="button">
 						{{> base-avatar url="{{ avatar }}" }}
-						<span class="profile-settings__change-avatar base-text M">Поменять <br/> аватар</span>
+						<span class="profile-settings__change-avatar base-text base-text_size_m">Поменять <br/> аватар</span>
 					</button>
 					<div class="profile-settings__header-info">
-						<h2 class="profile-settings__header-title base-text L Medium">{{ first_name }} {{ second_name }}</h2>
-						<span class="profile-settings__header-phone base-text M">{{ phone }}</span>
+						<h2 class="profile-settings__header-title base-text base-text_size_l base-text_weight_medium">{{ first_name }} {{ second_name }}</h2>
+						<span class="profile-settings__header-phone base-text base-text_size_m">{{ phone }}</span>
 					</div>
 				</div>
 				{{#> base-button className="profile-settings__logout-button" }}
@@ -20,7 +20,7 @@
 			</header>
 		{{/with}}
 		<div class="profile-settings__main">
-			<h1 class="profile-settings__title base-text XL Medium">Профиль</h1>
+			<h1 class="profile-settings__title base-text base-text_size_xl base-text_weight_medium">Профиль</h1>
 			<form class="profile-settings__form">
 				{{#each config}}
 					{{> base-input this readonly=true variant="secondary" }}
@@ -28,7 +28,7 @@
 				{{#> base-button className="profile-settings__data-button" type="submit" }}
 					Изменить данные
 				{{/base-button}}
-				<button class="profile-settings__password-button base-text M Medium" type="button">
+				<button class="profile-settings__password-button base-text base-text_size_m base-text_weight_medium" type="button">
 					Изменить пароль
 				</button>
 			</form>

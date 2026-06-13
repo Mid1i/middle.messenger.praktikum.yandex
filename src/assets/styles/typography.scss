@@ -7,44 +7,44 @@
 	font-size: var(--_font-size);
 	font-weight: var(--_font-weight);
 	line-height: var(--_line-height);
-}
 
-.Regular {
-	--font-weight: var(--Regular-font-weight);
-}
+	&_weight_regular {
+		--font-weight: var(--Regular-font-weight);
+	}
 
-.Medium {
-	--font-weight: var(--Medium-font-weight);
-}
+	&_weight_medium {
+		--font-weight: var(--Medium-font-weight);
+	}
 
-.Semibold {
-	--font-weight: var(--Semibold-font-weight);
-}
+	&_weight_semibold {
+		--font-weight: var(--Semibold-font-weight);
+	}
 
-.Bold {
-	--font-weight: var(--Bold-font-weight);
-}
+	&_weight_bold {
+		--font-weight: var(--Bold-font-weight);
+	}
 
-.XS {
-	--font-size: var(--XS-font-size);
-}
+	&_size_xs {
+		--font-size: var(--XS-font-size);
+	}
 
-.S {
-	--font-size: var(--S-font-size);
-}
+	&_size_s {
+		--font-size: var(--S-font-size);
+	}
 
-.M {
-	--font-size: var(--M-font-size);
-}
+	&_size_m {
+		--font-size: var(--M-font-size);
+	}
 
-.L {
-	--font-size: var(--L-font-size);
-}
+	&_size_l {
+		--font-size: var(--L-font-size);
+	}
 
-.XL {
-	--font-size: var(--XL-font-size);
-}
+	&_size_xl {
+		--font-size: var(--XL-font-size);
+	}
 
-.XXL {
-	--font-size: var(--XXL-font-size);
+	&_size_xxl {
+		--font-size: var(--XXL-font-size);
+	}
 }

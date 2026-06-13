@@ -3,7 +3,7 @@
 	<div class="chats-communication__content">
 		<section class="chats-communication__chats chats-section">
 			<header class="chats-section__header">
-				<h1 class="chats-section__title base-text L Medium">Чаты</h1>
+				<h1 class="chats-section__title base-text base-text_size_l base-text_weight_medium">Чаты</h1>
 				{{#> base-button ariaLabel="Новый чат" variant="secondary" }}
 					<div class="chats-section__add-icon rect-size masked-block"></div>
 				{{/base-button}}
@@ -29,7 +29,7 @@
 					<header class="chat-window__header">
 						<div class="chat-window__header-info">
 							{{> base-avatar alt="Аватар чата {{ title }}" url="{{ avatar }}" }}
-							<h3 class="chat-window__title base-text L Medium">{{ title }}</h3>
+							<h3 class="chat-window__title base-text base-text_size_l base-text_weight_medium">{{ title }}</h3>
 						</div>
 						{{#> base-button ariaLabel="Открыть настройки чата" variant="secondary" }}
 							<div class="chat-window__options-icon rect-size masked-block"></div>
@@ -45,7 +45,7 @@
 					<footer class="chat-window__footer">
 						<form class="chat-window__form">
 							<textarea 
-								class="chat-window__message-input base-text S"
+								class="chat-window__message-input base-text"
 								placeholder="Сообщение"
 								aria-label="Сообщение"
 								name="message"
@@ -79,7 +79,7 @@
 							alt="Логотип мессенджера «ME Чат»"
 						/>
 					</picture>
-					<span class="chat-window__empty-text base-text M">Выберите чат, чтобы начать переписку.</span>
+					<span class="chat-window__empty-text base-text base-text_size_m">Выберите чат, чтобы начать переписку.</span>
 				</div>
 			{{/with}}
 		</section>

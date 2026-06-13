@@ -4,15 +4,15 @@
 		url="{{ avatar }}" 
 	}}
 	<div class="chats-list-item__content">
-		<span class="chats-list-item__title base-text S">{{ title }}</span>
-		<span class="chats-list-item__text base-text XS">
-			<span class="chats-list-item__text base-text Bold">{{ last_message.user.first_name }}:</span> 
+		<span class="chats-list-item__title base-text">{{ title }}</span>
+		<span class="chats-list-item__text base-text base-text_size_xs">
+			<span class="chats-list-item__text base-text base-text_weight_bold">{{ last_message.user.first_name }}:</span> 
 			{{ last_message.content }}
 		</span>
 	</div>
 	{{#if unread_count}}
 		<span 
-			class="chats-list-item__counter base-text XS rect-size"
+			class="chats-list-item__counter base-text base-text_size_xs rect-size"
 			aria-label="Непрочитанных соощений: {{ unread_count }}"	
 		>
 			{{ unread_count }}

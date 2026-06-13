@@ -1,9 +1,21 @@
 <label class="base-input base-input_variant_{{ set-default variant "primary" }}">
 	{{#if label}}
-		<span class="base-input__label base-text {{#if (is-equal variant "primary")}} XS {{else}} M {{/if}}">{{ label }}</span>
+		<span 
+			class="
+				base-input__label 
+				base-text 
+				{{#if (is-equal variant "primary")}} base-text_size_xs {{else}} base-text_size_m {{/if}}
+			"
+		>
+			{{ label }}
+		</span>
 	{{/if}}
 	<input
-		class="base-input__input base-text S {{#if error}}base-input__input_invalid{{/if}}"
+		class="
+			base-input__input 
+			base-text 
+			{{#if error}} base-input__input_invalid {{/if}}
+		"
 		placeholder="{{ placeholder }}"
 		value="{{ defaultValue }}"
 		name="{{ name }}"
@@ -13,6 +25,6 @@
 		{{#if error}} aria-invalid="true" aria-describedby="{{ id }}-error" {{/if}}
 	/>
 	{{#if error}}
-		<span id="{{ id }}-error" class="base-input__error-text base-text XS">{{ error }}</span>
+		<span id="{{ id }}-error" class="base-input__error-text base-text base-text_size_xs">{{ error }}</span>
 	{{/if}}
 </label>

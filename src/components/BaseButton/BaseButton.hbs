@@ -1,5 +1,13 @@
 <button 
-	class="base-button base-button_variant_{{ set-default variant "primary" }} {{ className }} {{#if (not-equal variant "primary")}}rect-size{{/if}} base-text M Medium" 
+	class="
+		base-button 
+		base-button_variant_{{ set-default variant "primary" }} 
+		{{ className }} 
+		{{#if (not-equal variant "primary")}} rect-size {{/if}} 
+		base-text 
+		base-text_size_m 
+		base-text_weight_medium
+	" 
 	aria-label="{{ ariaLabel }}" 
 	type="{{ type }}"
 	{{#if disabled}} disabled {{/if}}

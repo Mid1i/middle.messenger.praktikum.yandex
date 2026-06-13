@@ -1,22 +1,24 @@
 <main class="sign-in">
 	<div class="sign-in__container">
 		<div class="sign-in__welcome-block welcome-block">
-			<picture class="sign-in__welcome-wrapper rect-size">
+			<div class="sign-in__welcome-wrapper rect-size">
 				<img
 					class="sign-in__welcome-image"
 					src="/logo.svg"
 					alt="Логотип мессенджера «ME Чат»"
 				/>
-			</picture>
+			</div>
 			<h1 class="welcome-block__title base-text XL Medium">Вход</h1>
-			<span class="welcome-block__subtext">Рады видеть Вас снова!</span>
+			<p class="welcome-block__subtext">Рады видеть Вас снова!</p>
 		</div>
 		<form class="sign-in__form form">
 			{{#each config}}
 				{{> base-input }}
 			{{/each}}
 			
-			{{#> base-button}} Войти {{/base-button}}
+			{{#> base-button type="submit" }} 
+				Войти 
+			{{/base-button}}
 		</form>
 		<span class="sign-in__subtext form-subtext">
 			Нет аккаунта?
@@ -25,4 +27,4 @@
 			{{/base-link}}
 		</span>
 	</div>
-</div>
+</main>

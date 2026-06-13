@@ -1,12 +1,16 @@
 .aside-panel {
 	--base-avatar-size: 48px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 24px;
-
 	padding: 48px 36px 52px;
+	
+	&__navigation {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+
+		height: 100%;
+	}
 
 	&__logo-wrapper {
 		--size: 34px;
@@ -16,7 +20,7 @@
 		object-fit: contain;
 	}
 
-	&__chats-link {
+	&__link_chats {
 		width: 100%;
 
 		padding: 8px 24px;
@@ -43,24 +47,24 @@
 			background: var(--background-button-primary-active);
 		}
 
-		&_active {
+		&.aside-panel__link_active {
 			background: var(--background-button-primary-active);
 		}
 	}
 
-	&__chats-icon {
+	&__link_profile {
+		margin-top: auto;
+
+		&.aside-panel__link_active {
+			--base-avatar-border-color: var(--background-button-primary-active);
+			--base-avatar-border-width: 5px;
+		}
+	}
+
+	&__icon {
 		--size: 24px;
 		--url: url("/icons/chats.svg");
 
 		color: var(--text-base-primary);
-	}
-
-	&__profile-link {
-		margin-top: auto;
-
-		&_active {
-			--base-avatar-border-color: var(--background-button-primary-active);
-			--base-avatar-border-width: 5px;
-		}
 	}
 }

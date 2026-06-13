@@ -50,7 +50,7 @@
 			border-color: var(--border-base-primary);
 		}
 
-		&:focus-visible:not(.base-input__input_negative, :read-only) {
+		&:focus-visible:not(.base-input__input_invalid, :read-only) {
 			background: transparent;
 			border-color: var(--base-input-border-active); 
 		}
@@ -59,7 +59,7 @@
 			color: var(--text-base-secondary);
 		}
 
-		&_negative {
+		&_invalid {
 			border-color: var(--base-input-border-error); 
 		}
 	}

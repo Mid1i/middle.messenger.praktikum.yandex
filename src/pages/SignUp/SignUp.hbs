@@ -1,25 +1,27 @@
 <main class="sign-up">
 	<header class="sign-up__header">
-		<picture class="sign-up__logo-wrapper rect-size">
+		<div class="sign-up__logo-wrapper rect-size">
 			<img
 				class="sign-up__logo-image"
 				src="/logo.svg"
 				alt="Логотип мессенджера «ME Чат»"
 			/>
-		</picture>
+		</div>
 		<span class="sign-up__header-text base-text L Bold">ME Чат</span>
 	</header>
 	<div class="sign-up__content">
 		<div class="sign-up__welcome-block welcome-block">
 			<h1 class="welcome-block__title base-text XL Medium">Регистрация</h1>
-			<span class="welcome-block__subtext base-text M">Создайте аккаунт, чтобы начать общение.</span>
+			<p class="welcome-block__subtext base-text M">Создайте аккаунт, чтобы начать общение.</p>
 		</div>
 		<form class="sign-up__form form">
 			{{#each config}}
 				{{> base-input }}
 			{{/each}}
 
-			{{#> base-button}} Зарегистрироваться {{/base-button}}
+			{{#> base-button type="submit" }} 
+				Зарегистрироваться 
+			{{/base-button}}
 		</form>
 		<span class="sign-up__subtext form-subtext">
 			Есть аккаунт?
@@ -28,5 +30,5 @@
 			{{/base-link}}
 		</span>
 	</div>
-	<aside class="sign-up__aside"></aside>
-</div>
+	<div class="sign-up__aside"></div>
+</main>

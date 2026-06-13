@@ -6,7 +6,6 @@ export const SIGN_IN_INPUTS: IBaseInputProps[] = [
 		"name": "login",
 		"id": "login",
 		"placeholder": "ivanivanov",
-		"type": "text"
 	},
 	{
 		"label": "Пароль",

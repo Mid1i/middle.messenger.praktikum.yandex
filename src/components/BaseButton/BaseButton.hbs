@@ -1,8 +1,8 @@
 <button 
-	class="base-button base-button_type_{{ set-default type "primary" }} {{ className }} {{#if (not-equal type "primary")}}rect-size{{/if}} base-text M Medium" 
+	class="base-button base-button_variant_{{ set-default variant "primary" }} {{ className }} {{#if (not-equal variant "primary")}}rect-size{{/if}} base-text M Medium" 
 	aria-label="{{ ariaLabel }}" 
 	type="{{ type }}"
-	{{ disabled }}
+	{{#if disabled}} disabled {{/if}}
 >
 	{{> @partial-block }}
 </button>

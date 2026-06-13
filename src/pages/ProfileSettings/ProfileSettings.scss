@@ -73,11 +73,11 @@
 			content: "";
 		}
 
-		&:hover::before {
+		&:hover::before, &:focus-visible {
 			background: rgb(0 0 0 / 70%);
 		}
 		
-		&:hover > * {
+		&:hover > *, &:focus-visible > * {
 			opacity: 1;
 		} 
 	}

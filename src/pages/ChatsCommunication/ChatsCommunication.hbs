@@ -1,10 +1,10 @@
 <main class="chats-communication">
 	{{> aside-panel activePage="chats" }}
-	<main class="chats-communication__content">
+	<div class="chats-communication__content">
 		<section class="chats-communication__chats chats-section">
 			<header class="chats-section__header">
 				<h1 class="chats-section__title base-text L Medium">Чаты</h1>
-				{{#> base-button ariaLabel="Новый чат" type="secondary" }}
+				{{#> base-button ariaLabel="Новый чат" variant="secondary" }}
 					<div class="chats-section__add-icon rect-size masked-block"></div>
 				{{/base-button}}
 			</header>
@@ -19,46 +19,51 @@
 			</div>
 			<div class="chats-section__list">
 				{{#each config}}
-					{{> chats-list-item }}
+					{{> chats-list-item this isActive=(is-equal 1 @index) }}
 				{{/each}}
 			</div>
 		</section>
 		<section class="chats-communication__chat-window chat-window">
 			{{#with currentChat}}
-				<section class="chat-window__history">
+				<section class="chat-window__inner">
 					<header class="chat-window__header">
 						<div class="chat-window__header-info">
 							{{> base-avatar alt="Аватар чата {{ title }}" url="{{ avatar }}" }}
 							<h3 class="chat-window__title base-text L Medium">{{ title }}</h3>
 						</div>
-						{{#> base-button ariaLabel="Открыть настройки чата" type="secondary" }}
+						{{#> base-button ariaLabel="Открыть настройки чата" variant="secondary" }}
 							<div class="chat-window__options-icon rect-size masked-block"></div>
 						{{/base-button}}
 					</header>
-					<main class="chat-window__content">
-						{{#each history}}
-							{{> chat-message this notYourself=(is-odd @index) }}
-						{{/each}}
-					</main>
+					<div class="chat-window__content">
+						<ul class="chat-window__message-list">
+							{{#each history}}
+								{{> chat-message this isIncoming=(is-odd @index) }}
+							{{/each}}
+						</ul>
+					</div>
 					<footer class="chat-window__footer">
 						<form class="chat-window__form">
 							<textarea 
 								class="chat-window__message-input base-text S"
 								placeholder="Сообщение"
+								aria-label="Сообщение"
 								name="message"
 								id="message"	
 							></textarea>
 							{{#> base-button 
 								 ariaLabel="Прикрепить вложение"
 								 className="chat-window__attach-button" 
-								 type="tertiary" 
+								 variant="tertiary" 
+								 type="button"
 							}}
 								<div class="chat-window__attach-icon rect-size masked-block"></div>
 							{{/base-button}}
 							{{#> base-button
 								 ariaLabel="Отправить сообщение"
 								 className="chat-window__send-button"
-								 type="quaternary"
+								 variant="quaternary"
+								 type="submit"
 							}}
 								<div class="chat-window__send-icon rect-size masked-block"></div>
 							{{/base-button}}
@@ -66,7 +71,7 @@
 					</footer>
 				</section>
 			{{else}}
-				<div class="chat-window__empty">
+				<div class="chat-window__empty" role="status">
 					<picture class="chat-window__empty-wrapper rect-size">
 						<img
 							class="chat-window__empty-image"
@@ -78,5 +83,5 @@
 				</div>
 			{{/with}}
 		</section>
-	</main>
+	</div>
 </main>

@@ -9,7 +9,7 @@
 
 	transition: background 0.3s, border-color 0.3s, opacity 0.3s;
 
-	&_type_primary {
+	&_variant_primary {
 		color: var(--base-button-text-primary);
 
 		padding: 12px;
@@ -28,7 +28,7 @@
 		}
 	}
 
-	&_type_secondary {
+	&_variant_secondary {
 		--size: var(--_base-button-size);
 
 		background: var(--background-button-primary);
@@ -45,7 +45,7 @@
 		}
 	}
 
-	&_type_tertiary {
+	&_variant_tertiary {
 		--size: var(--_base-button-size);
 
 		border-radius: 12px;
@@ -59,7 +59,7 @@
 		}
 	}
 
-	&_type_quaternary {
+	&_variant_quaternary {
 		--size: var(--_base-button-size);
 		
 		background: var(--background-button-secondary);

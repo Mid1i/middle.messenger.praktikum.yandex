@@ -3,15 +3,16 @@
 		<span class="base-input__label base-text {{#if (is-equal variant "primary")}} XS {{else}} M {{/if}}">{{ label }}</span>
 	{{/if}}
 	<input
-		class="base-input__input base-text S {{#if error}}base-input__input_negative{{/if}}"
+		class="base-input__input base-text S {{#if error}}base-input__input_invalid{{/if}}"
 		placeholder="{{ placeholder }}"
 		value="{{ defaultValue }}"
-		readonly="{{ readonly }}"
 		name="{{ name }}"
-		type="{{ type }}"
+		type="{{ set-default type "text" }}"
 		id="{{ id }}"
+		{{#if readonly}} readonly {{/if}}
+		{{#if error}} aria-invalid="true" aria-describedby="{{ id }}-error" {{/if}}
 	/>
 	{{#if error}}
-		<span class="base-input__error-text base-text XS">{{ error }}</span>
+		<span id="{{ id }}-error" class="base-input__error-text base-text XS">{{ error }}</span>
 	{{/if}}
 </label>

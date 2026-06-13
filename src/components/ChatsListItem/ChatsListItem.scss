@@ -17,7 +17,8 @@
 		background: var(--background-base-primary-hover);
 	}
 
-	&:active {
+	&:active,
+	&_active {
 		background: var(--background-base-primary-active);
 	}
 

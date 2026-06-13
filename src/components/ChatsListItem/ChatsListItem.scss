@@ -13,13 +13,7 @@
 
 	transition: background 0.3s;
 
-	@media(hover) {
-		&:hover {
-			background: var(--background-base-primary-hover);
-		}
-	}
-
-	&:focus-visible {
+	&:hover, &:focus-visible {
 		background: var(--background-base-primary-hover);
 	}
 

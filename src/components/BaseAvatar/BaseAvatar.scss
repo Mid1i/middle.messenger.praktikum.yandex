@@ -1,5 +1,7 @@
 .base-avatar {
 	--_base-avatar-size: var(--base-avatar-size, 32px);
+	--_base-avatar-border-color: var(--base-avatar-border-color, var(--border-base-primary));
+	--_base-avatar-border-width: var(--base-avatar-border-width, 2px);
 }
 
 .base-avatar {
@@ -13,5 +15,7 @@
 
 	background: var(--text-base-primary);
 	border-radius: 100%;
-	border: 2px solid var(--border-base-primary);
+	border: var(--_base-avatar-border-width) solid var(--_base-avatar-border-color);
+
+	transition: border-color 0.3s, border-width 0.3s;
 }

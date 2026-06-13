@@ -32,11 +32,9 @@
 			font-weight: inherit;
 		}
 
-		@media(hover) {
-			&:hover {
-				background: transparent;
-				border-color: var(--border-base-primary);
-			}
+		&:hover {
+			background: transparent;
+			border-color: var(--border-base-primary);
 		}
 
 		&:focus-visible:not(.base-input__input_negative) {

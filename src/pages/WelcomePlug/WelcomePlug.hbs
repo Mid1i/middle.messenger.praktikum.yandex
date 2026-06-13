@@ -1,10 +1,13 @@
 <main class="welcome-plug">
-	<ul class="welcome-plug__list welcome-list">
+	<nav class="welcome-plug__navigation welcome-navigation">
 		{{#each config}}
-			<li
-				class="welcome-list__el base-text base-text_size_xl base-text_weight_medium"
-				data-href={{href}}
-			>{{text}}</li>
+			<a
+				class="welcome-navigation__el base-text base-text_size_xl base-text_weight_medium"
+				data-href="{{ href }}"
+				href="#"
+			>
+				{{text}}
+			</a>
 		{{/each}}
-	</ul>
+	</nav>
 </main>

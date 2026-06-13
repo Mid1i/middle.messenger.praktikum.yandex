@@ -11,7 +11,7 @@ export const SIGN_IN_INPUTS: IBaseInputProps[] = [
 		"label": "Пароль",
 		"name": "password",
 		"id": "password",
-		"placeholder": "********",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
 		"type": "password"
 	},
 ];

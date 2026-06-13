@@ -8,7 +8,7 @@ export const SIGN_UP_INPUTS: IBaseInputProps[] = [
 		"placeholder": "ivanivanov",
 	},
 	{
-		"label": "Почта",
+		"label": "Email",
 		"name": "email",
 		"id": "email",
 		"placeholder": "example@yandex.ru",
@@ -35,14 +35,14 @@ export const SIGN_UP_INPUTS: IBaseInputProps[] = [
 		"label": "Пароль",
 		"name": "password",
 		"id": "password",
-		"placeholder": "Пароль",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
 		"type": "password"
 	},
 	{
 		"label": "Повторите пароль",
 		"name": "password-repeat",
 		"id": "password-repeat",
-		"placeholder": "Пароль",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
 		"type": "password"
 	},
 ];

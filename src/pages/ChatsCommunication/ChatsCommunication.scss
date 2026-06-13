@@ -124,6 +124,8 @@
 
 	&__content {
 		flex: 1 1 auto;
+
+		min-height: 0px;
 	}
 
 	&__message-list {
@@ -161,7 +163,7 @@
 		height: 48px;
 		width: 100%;
 
-		padding: 15px 46px;
+		padding: 13px 46px;
 
 		background: transparent;
 		border: 1px solid var(--border-base-primary);

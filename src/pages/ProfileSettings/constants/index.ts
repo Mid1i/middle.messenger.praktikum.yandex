@@ -20,7 +20,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		"type": "text"
 	},
 	{
-		"label": "Почта",
+		"label": "Email",
 		"name": "email",
 		"id": "email",
 		"placeholder": "example@yandex.ru",

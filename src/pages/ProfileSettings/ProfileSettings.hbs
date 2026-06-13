@@ -34,4 +34,25 @@
 			</form>
 		</div>
 	</div>
+
+	{{#> base-popup }}
+		<form class="profile-settings__avatar-popup avatar-popup">
+			<h3 class="avatar-popup__title base-text base-text_size_l base-text_weight-medium">Загрузите новый аватар пользователя</h3>
+			<label class="avatar-popup__upload-field">
+				<div class="avatar-popup__upload-icon rect-size masked-block"></div>
+				<p class="avatar-popup__hint-text base-text base-text_size_m base-text_weight_semibold">Перетащите файл сюда</p>
+
+				<input 
+					class="avatar-popup__input"
+					accept="image/*"
+					type="file"
+					id="avatar"
+					name="avatar"	
+				/>
+			</label>
+			{{#> base-button type="submit" }}
+				Сохранить
+			{{/base-button}}
+		</form>
+	{{/base-popup}}
 </main>

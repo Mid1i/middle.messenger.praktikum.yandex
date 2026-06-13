@@ -9,6 +9,7 @@ import BaseAvatar from "@/components/BaseAvatar";
 import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import BaseLink from "@/components/BaseLink";
+import BasePopup from "@/components/BasePopup";
 import ChatMessage from "@/components/ChatMessage";
 import ChatsListItem from "@/components/ChatsListItem";
 
@@ -25,6 +26,7 @@ Handlebars.registerPartial("base-avatar", BaseAvatar);
 Handlebars.registerPartial("base-button", BaseButton);
 Handlebars.registerPartial("base-input", BaseInput); 
 Handlebars.registerPartial("base-link", BaseLink); 
+Handlebars.registerPartial("base-popup", BasePopup); 
 Handlebars.registerPartial("chat-message", ChatMessage); 
 Handlebars.registerPartial("chats-list-item", ChatsListItem); 
 

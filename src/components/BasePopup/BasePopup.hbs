@@ -1,4 +1,13 @@
-<div class="base-popup {{#if isOpened}} base-popup_opened {{/if}}">
+<div 
+	class="base-popup {{#if isOpened}} base-popup_opened {{/if}}" 
+	aria-label="{{ ariaLabel }}"
+	{{#if isOpened }} 
+		aria-modal="true" 
+		role="dialog"
+	{{else}}
+		aria-hidden="true"	
+	{{/if}}
+>
 	<div class="base-popup__content">
 		{{> @partial-block }}
 	</div>

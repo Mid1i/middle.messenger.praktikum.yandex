@@ -35,21 +35,35 @@
 		</div>
 	</div>
 
-	{{#> base-popup }}
-		<form class="profile-settings__avatar-popup avatar-popup">
-			<h3 class="avatar-popup__title base-text base-text_size_l base-text_weight-medium">Загрузите новый аватар пользователя</h3>
-			<label class="avatar-popup__upload-field">
-				<div class="avatar-popup__upload-icon rect-size masked-block"></div>
-				<p class="avatar-popup__hint-text base-text base-text_size_m base-text_weight_semibold">Перетащите файл сюда</p>
+	{{#> base-popup ariaLabel="Изменение аватара" }}
+		<form class="profile-settings__profile-popup profile-popup">
+			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Загрузите новый аватар пользователя</h3>
+			<label class="profile-popup__upload-field">
+				<div class="profile-popup__upload-icon rect-size masked-block"></div>
+				<p class="profile-popup__hint-text base-text base-text_size_m base-text_weight_semibold">Перетащите файл сюда <br/> или выберите на устройстве</p>
 
 				<input 
-					class="avatar-popup__input"
+					class="profile-popup__input"
 					accept="image/*"
 					type="file"
 					id="avatar"
 					name="avatar"	
 				/>
 			</label>
+			{{#> base-button type="submit" }}
+				Сохранить
+			{{/base-button}}
+		</form>
+	{{/base-popup}}
+
+	{{#> base-popup isOpened=true ariaLabel="Изменение пароля" }}
+		<form class="profile-settings__profile-popup profile-popup">
+			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Изменение пароля</h3>
+			<div class="profile-popup__form-fields">
+				{{#each passwordConfig }}
+					{{> base-input }}
+				{{/each}}
+			</div>
 			{{#> base-button type="submit" }}
 				Сохранить
 			{{/base-button}}

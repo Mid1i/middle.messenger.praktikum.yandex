@@ -61,3 +61,27 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		"type": "text"
 	}
 ];
+
+export const PASSWORD_INPUTS: IBaseInputProps[] = [
+	{
+		"label": "Старый пароль",
+		"name": "old_password",
+		"id": "old_password",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
+		"type": "text"
+	},
+	{
+		"label": "Новый пароль",
+		"name": "new_password",
+		"id": "new_password",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
+		"type": "text"
+	},
+	{
+		"label": "Повторите новый пароль",
+		"name": "new_password-repeat",
+		"id": "new_password-repeat",
+		"placeholder": "● ● ● ● ● ● ● ● ● ● ● ●",
+		"type": "text"
+	},
+];

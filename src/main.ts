@@ -49,7 +49,7 @@ class App {
         if (!this.appElement) return;
 
         this.appElement.addEventListener("click", (event: Event) => {
-            const dataHref = (event.target as HTMLElement)?.getAttribute("data-href");
+            const dataHref = (event.target as HTMLElement)?.closest("[data-href]")?.getAttribute("data-href");
             if (!dataHref) return;
 
             this.state = dataHref as PageType ?? "plug";

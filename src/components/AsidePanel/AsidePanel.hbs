@@ -7,7 +7,7 @@
 		/>
 	</picture>
 	<a
-		class="aside-panel__chats-link"
+		class="aside-panel__chats-link {{#if (is-equal activePage 'chats')}} aside-panel__chats-link_active {{/if}}"
 		href="#"
 		data-href="chats"
 		aria-label="Перейти к чатам"
@@ -15,7 +15,7 @@
 		<div class="aside-panel__chats-icon rect-size masked-block"></div>
 	</a>
 	<a 
-		class="aside-panel__profile-link" 
+		class="aside-panel__profile-link {{#if (is-equal activePage 'profile')}} aside-panel__profile-link_active {{/if}}" 
 		href="#" 
 		data-href="profile"
 		aria-label="Перейти в профиль"

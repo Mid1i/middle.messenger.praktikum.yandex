@@ -6,7 +6,8 @@ export type PageType =
 	| "signUp"
 	| "notFound"
 	| "serverError"
-	| "chats";
+	| "chats"
+	| "profile";
 
 export interface IUser {
 	first_name: string;

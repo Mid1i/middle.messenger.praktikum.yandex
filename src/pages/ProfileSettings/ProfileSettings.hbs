@@ -1,0 +1,37 @@
+<div class="profile-settings">
+	{{> aside-panel activePage="profile" }}
+	<main class="profile-settings__content">
+		{{#with currentUser}}
+			<header class="profile-settings__header">
+				<div class="profile-settings__header-wrapper">
+					<div class="profile-settings__header-avatar">
+						{{> base-avatar url="{{ avatar }}" }}
+						<span class="profile-settings__change-avatar base-text M">Поменять <br/> аватар</span>
+					</div>
+					<div class="profile-settings__header-info">
+						<h2 class="profile-settings__header-title base-text L Medium">{{ first_name }} {{ second_name }}</h1>
+						<span class="profile-settings__header-phone base-text M">{{ phone }}</span>
+					</div>
+				</div>
+				{{#> base-button className="profile-settings__logout-button" }}
+					Выйти
+					<div class="profile-settings__logout-icon rect-size masked-block"></div>
+				{{/base-button}}
+			</header>
+		{{/with}}
+		<div class="profile-settings__main">
+			<h1 class="profile-settings__title base-text XL Medium">Профиль</h1>
+			<form class="profile-settings__form">
+				{{#each config}}
+					{{> base-input this readonly=true variant="secondary" }}
+				{{/each}}
+				{{#> base-button className="profile-settings__data-button"}}
+					Изменить данные
+				{{/base-button}}
+				<button class="profile-settings__password-button base-text M Medium">
+					Изменить пароль
+				</button>
+			</form>
+		</div>
+	</main>
+</div>

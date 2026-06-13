@@ -1,10 +1,12 @@
-<label class="base-input">
+<label class="base-input base-input_variant_{{ set-default variant "primary" }}">
 	{{#if label}}
-		<span class="base-input__label base-text XS">{{ label }}</span>
+		<span class="base-input__label base-text {{#if (is-equal variant "primary")}} XS {{else}} M {{/if}}">{{ label }}</span>
 	{{/if}}
 	<input
 		class="base-input__input base-text S {{#if error}}base-input__input_negative{{/if}}"
 		placeholder="{{ placeholder }}"
+		value="{{ defaultValue }}"
+		readonly="{{ readonly }}"
 		name="{{ name }}"
 		type="{{ type }}"
 		id="{{ id }}"

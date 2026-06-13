@@ -5,10 +5,23 @@
 }
 
 .base-input {
-	display: flex;
-	flex-direction: column;
-
 	width: 100%;
+	
+	&_variant_primary {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&_variant_secondary {
+		align-items: flex-start;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 150px;
+
+		.base-input__label {
+			margin-bottom: 0px;
+		}
+	}
 
 	&__label {
 		margin-bottom: 8px;
@@ -32,14 +45,18 @@
 			font-weight: inherit;
 		}
 
-		&:hover {
+		&:hover:not(:read-only) {
 			background: transparent;
 			border-color: var(--border-base-primary);
 		}
 
-		&:focus-visible:not(.base-input__input_negative) {
+		&:focus-visible:not(.base-input__input_negative, :read-only) {
 			background: transparent;
 			border-color: var(--base-input-border-active); 
+		}
+
+		&:read-only {
+			color: var(--text-base-secondary);
 		}
 
 		&_negative {

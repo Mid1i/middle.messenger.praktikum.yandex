@@ -7,6 +7,8 @@ export interface IBaseInputProps {
 	type: string;
 	name: string;
 	id: string;
+	defaultValue?: string;
+	readonly?: boolean;
 	error?: string;
 }
 

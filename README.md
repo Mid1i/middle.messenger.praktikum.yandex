@@ -47,16 +47,16 @@ http://localhost:5173
 
 ## Сборка проекта
 
-Сборка production-версии:
+Сборка и запуск production-версии:
 
 ```bash
-npm run build
+npm run start
 ```
 
-Предпросмотр production-сборки:
+После запуска приложение будет доступно по адресу:
 
-```bash
-npm run preview
+```text
+http://localhost:3000
 ```
 
 ## Деплой

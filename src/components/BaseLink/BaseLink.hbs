@@ -1,7 +1,7 @@
 <a 
-	class="base-link base-link_type_{{ type }} base-text M Medium" 
+	class="base-link base-link_type_{{ set-default type "primary" }} base-text M Medium" 
 	href={{ href }}
 	data-href={{ data-href }}
 >
-	{{ text }}
+	{{> @partial-block }}
 </a>

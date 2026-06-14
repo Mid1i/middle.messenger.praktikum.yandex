@@ -1,0 +1,201 @@
+.profile-settings {
+	display: flex;
+	align-items: stretch;
+
+	height: 100%;
+	width: 100%;
+
+	&__content {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		gap: 112px;
+
+		padding: 16px;
+		padding-left: 0px;
+	}
+
+	&__header {
+		position: relative;
+
+		height: 240px;
+		width: 100%;
+
+		background: url("/welcome-background.png") center center no-repeat;
+		background-size: cover;
+		border-radius: 24px 24px 0px 0px;
+	}
+
+	&__header-wrapper {
+		position: absolute;
+		top: calc(100% - 80px);
+		left: 32px;
+
+		display: flex;
+		align-items: flex-end;
+		gap: 24px;
+	}
+
+	&__change-avatar {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 2;
+
+		opacity: 0;
+
+		text-align: center;
+
+		transform: translate(-50%, -50%);
+		transition: opacity 0.3s;
+	}
+
+	&__header-avatar {
+		--base-avatar-size: 160px;
+
+		overflow: hidden;
+
+		position: relative;
+
+		border-radius: 100%;
+
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			inset: 0px;
+
+			height: 100%;
+			width: 100%;
+
+			transition: background 0.3s;
+			
+			content: "";
+		}
+
+		&:hover::before, &:focus-visible {
+			background: rgb(0 0 0 / 70%);
+		}
+		
+		&:hover > *, &:focus-visible > * {
+			opacity: 1;
+		} 
+	}
+
+	&__header-info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	&__header-login {
+		color: var(--text-base-secondary);
+	}
+
+	&__logout-button {
+		position: absolute;
+		top: calc(100% + 24px);
+		right: 32px;
+
+		width: 120px;
+
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__logout-icon {
+		--size: 20px;
+		--url: url("/icons/logout.svg");
+	}
+
+	&__main {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		justify-content: center;
+		gap: 32px;
+
+		padding-left: 32px;
+	}
+
+	&__form {
+		--base-input-height: 52px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		width: 600px;
+	}
+
+	&__data-button {
+		margin-top: 24px;
+	}
+
+	&__password-button {
+		align-self: center;
+		
+		color: var(--base-link-text-primary);
+
+		&:hover, &:focus-visible {
+			text-decoration: underline;
+		}
+	}
+}
+
+.profile-popup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 48px;
+
+	padding: 24px;
+
+	width: 100%;
+
+	&__upload-field {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+
+		height: 200px;
+		width: 100%;
+
+		border: 1px dashed var(--border-base-primary);
+		border-radius: 24px;
+
+		color: var(--text-base-secondary);
+
+		transition: background 0.3s, border-color 0.3s;
+
+		&:hover, &:focus-visible {
+			background: var(--background-base-primary-hover);
+		}
+
+		&:active {
+			border-color: var(--border-base-primary-active);
+		}
+	}
+
+	&__form-fields {
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+
+		width: 100%;
+	}
+
+	&__input {
+		display: none;
+	}
+
+	&__upload-icon {
+		--size: 48px;
+		--url: url("/icons/upload.svg");
+
+		color: inherit;
+	}
+}

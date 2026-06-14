@@ -1,0 +1,72 @@
+.base-input {
+	--_base-input-height: var(--base-input-height, 40px);
+	--_base-input-border-radius: var(--base-input-border-radius, 16px);
+	--_base-input-padding: var(--base-input-padding, 0px 16px);
+}
+
+.base-input {
+	width: 100%;
+	
+	&_variant_primary {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&_variant_secondary {
+		align-items: flex-start;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 150px;
+
+		.base-input__label {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__label {
+		margin-bottom: 8px;
+	}
+
+	&__input {
+		height: var(--_base-input-height);
+
+		padding: var(--_base-input-padding);
+
+		background: var(--base-input-background);
+		border: 1px solid transparent;
+		border-radius: var(--_base-input-border-radius);
+
+		transition: background 0.3s, border-color 0.3s;
+		
+		&::placeholder {
+			color: var(--base-input-placeholder);
+			font-family: inherit;
+			font-size: inherit;
+			font-weight: inherit;
+		}
+
+		&:hover:not(:read-only) {
+			background: transparent;
+			border-color: var(--border-base-primary);
+		}
+
+		&:focus-visible:not(.base-input__input_invalid, :read-only) {
+			background: transparent;
+			border-color: var(--base-input-border-active); 
+		}
+
+		&:read-only {
+			color: var(--text-base-secondary);
+		}
+
+		&_invalid {
+			border-color: var(--base-input-border-error); 
+		}
+	}
+
+	&__error-text {
+		margin-top: 4px;
+
+		color: var(--text-negative);
+	}
+}

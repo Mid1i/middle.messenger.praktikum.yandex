@@ -1,0 +1,33 @@
+.sign-in {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+
+	background: var(--background-base-primary);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 24px;
+
+		width: 360px;
+	}
+
+	&__welcome-block {
+		align-items: center;
+	}
+
+	&__welcome-wrapper {
+		--size: 64px;
+
+		margin-bottom: 24px;
+	}
+
+	&__welcome-image {
+		object-fit: contain;
+	}
+}

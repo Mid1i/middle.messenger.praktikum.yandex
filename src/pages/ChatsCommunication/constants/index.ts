@@ -1,0 +1,474 @@
+import type { IUser } from "@/types";
+
+interface IChatsItem {
+	id: number;
+    title: string;
+    avatar: string;
+    unread_count: number;
+    created_by: number;
+    last_message: IMessage;
+};
+
+export interface IMessage {
+	user: IUser;
+	time: string;
+	content: string;
+};
+
+export interface ICurrentChat extends IChatsItem {
+	history: IMessage[];
+}
+
+export const USERS: IUser[] = [
+	{
+		first_name: "Иван",
+		second_name: "Петров",
+		avatar: "/images/users/ivan-petrov.png",
+		email: "ivan.petrov@example.com",
+		login: "ivan_petrov",
+		phone: "+79990000001",
+	},
+	{
+		first_name: "Анна",
+		second_name: "Соколова",
+		avatar: "/images/users/anna-sokolova.png",
+		email: "anna.sokolova@example.com",
+		login: "anna_s",
+		phone: "+79990000002",
+	},
+	{
+		first_name: "Максим",
+		second_name: "Орлов",
+		avatar: "/images/users/maxim-orlov.png",
+		email: "maxim.orlov@example.com",
+		login: "m_orlov",
+		phone: "+79990000003",
+	},
+	{
+		first_name: "Елена",
+		second_name: "Волкова",
+		avatar: "/images/users/elena-volkova.png",
+		email: "elena.volkova@example.com",
+		login: "e_volkova",
+		phone: "+79990000004",
+	},
+	{
+		first_name: "Артём",
+		second_name: "Кузнецов",
+		avatar: "/images/users/artem-kuznetsov.png",
+		email: "artem.k@example.com",
+		login: "artem_k",
+		phone: "+79990000005",
+	},
+	{
+		first_name: "Дарья",
+		second_name: "Смирнова",
+		avatar: "/images/users/daria-smirnova.png",
+		email: "daria.s@example.com",
+		login: "daria_s",
+		phone: "+79990000006",
+	},
+	{
+		first_name: "Никита",
+		second_name: "Фёдоров",
+		avatar: "/images/users/nikita-fedorov.png",
+		email: "nikita.f@example.com",
+		login: "nikita_f",
+		phone: "+79990000007",
+	},
+	{
+		first_name: "Ольга",
+		second_name: "Морозова",
+		avatar: "/images/users/olga-morozova.png",
+		email: "olga.m@example.com",
+		login: "olga_m",
+		phone: "+79990000008",
+	},
+	{
+		first_name: "Дмитрий",
+		second_name: "Лебедев",
+		avatar: "/images/users/dmitry-lebedev.png",
+		email: "dmitry.l@example.com",
+		login: "d_lebedev",
+		phone: "+79990000009",
+	},
+	{
+		first_name: "Мария",
+		second_name: "Козлова",
+		avatar: "/images/users/maria-kozlova.png",
+		email: "maria.k@example.com",
+		login: "maria_k",
+		phone: "+79990000010",
+	},
+	{
+		first_name: "Павел",
+		second_name: "Егоров",
+		avatar: "/images/users/pavel-egorov.png",
+		email: "pavel.e@example.com",
+		login: "pavel_e",
+		phone: "+79990000011",
+	},
+	{
+		first_name: "София",
+		second_name: "Зайцева",
+		avatar: "/images/users/sofia-zaitseva.png",
+		email: "sofia.z@example.com",
+		login: "sofia_z",
+		phone: "+79990000012",
+	},
+	{
+		first_name: "Кирилл",
+		second_name: "Новиков",
+		avatar: "/images/users/kirill-novikov.png",
+		email: "kirill.n@example.com",
+		login: "kirill_n",
+		phone: "+79990000013",
+	},
+	{
+		first_name: "Виктория",
+		second_name: "Беляева",
+		avatar: "/images/users/victoria-belyaeva.png",
+		email: "victoria.b@example.com",
+		login: "victoria_b",
+		phone: "+79990000014",
+	},
+	{
+		first_name: "Алексей",
+		second_name: "Титов",
+		avatar: "/images/users/alexey-titov.png",
+		email: "alexey.t@example.com",
+		login: "alexey_t",
+		phone: "+79990000015",
+	},
+];
+
+export const CHATS: IChatsItem[] = [
+	{
+		id: 1,
+		title: "Frontend Team",
+		avatar: "/images/avatars/team-1.png",
+		unread_count: 3,
+		created_by: 1,
+		last_message: {
+			user: USERS[0],
+			time: "2026-06-08T09:12:00.000Z",
+			content: "Привет",
+		},
+	},
+	{
+		id: 2,
+		title: "Design Review",
+		avatar: "/images/avatars/design-review.png",
+		unread_count: 0,
+		created_by: 2,
+		last_message: {
+			user: USERS[1],
+			time: "2026-06-08T10:45:00.000Z",
+			content: "Макеты готовы к проверке",
+		},
+	},
+	{
+		id: 3,
+		title: "Weekend Plans",
+		avatar: "/images/avatars/weekend.png",
+		unread_count: 7,
+		created_by: 3,
+		last_message: {
+			user: USERS[2],
+			time: "2026-06-08T11:03:00.000Z",
+			content: "Поехали",
+		},
+	},
+	{
+		id: 4,
+		title: "Backend Squad",
+		avatar: "/images/avatars/backend.png",
+		unread_count: 1,
+		created_by: 4,
+		last_message: {
+			user: USERS[3],
+			time: "2026-06-08T11:27:00.000Z",
+			content: "Нужно обновить документацию по API до конца недели",
+		},
+	},
+	{
+		id: 5,
+		title: "Family",
+		avatar: "/images/avatars/family.png",
+		unread_count: 12,
+		created_by: 5,
+		last_message: {
+			user: USERS[4],
+			time: "2026-06-08T12:10:00.000Z",
+			content: "Когда будешь дома",
+		},
+	},
+	{
+		id: 6,
+		title: "Gaming",
+		avatar: "/images/avatars/gaming.png",
+		unread_count: 0,
+		created_by: 2,
+		last_message: {
+			user: USERS[5],
+			time: "2026-06-08T12:55:00.000Z",
+			content: "Собираемся вечером играть вместе",
+		},
+	},
+	{
+		id: 7,
+		title: "Project Alpha",
+		avatar: "/images/avatars/alpha.png",
+		unread_count: 5,
+		created_by: 1,
+		last_message: {
+			user: USERS[6],
+			time: "2026-06-08T13:14:00.000Z",
+			content: "Создал новую задачу в бэклоге проекта",
+		},
+	},
+	{
+		id: 8,
+		title: "Random Chat",
+		avatar: "/images/avatars/random.png",
+		unread_count: 2,
+		created_by: 6,
+		last_message: {
+			user: USERS[7],
+			time: "2026-06-08T13:48:00.000Z",
+			content: "Мем",
+		},
+	},
+	{
+		id: 9,
+		title: "DevOps",
+		avatar: "/images/avatars/devops.png",
+		unread_count: 9,
+		created_by: 7,
+		last_message: {
+			user: USERS[8],
+			time: "2026-06-08T14:20:00.000Z",
+			content: "Прод развернут без ошибок после последнего релиза",
+		},
+	},
+	{
+		id: 10,
+		title: "Book Club",
+		avatar: "/images/avatars/books.png",
+		unread_count: 0,
+		created_by: 8,
+		last_message: {
+			user: USERS[9],
+			time: "2026-06-08T15:05:00.000Z",
+			content: "Книга оказалась намного интереснее чем ожидалось",
+		},
+	},
+	{
+		id: 11,
+		title: "Travel Buddies",
+		avatar: "/images/avatars/travel.png",
+		unread_count: 4,
+		created_by: 9,
+		last_message: {
+			user: USERS[10],
+			time: "2026-06-08T15:41:00.000Z",
+			content: "Билеты уже куплены осталось выбрать отель",
+		},
+	},
+	{
+		id: 12,
+		title: "Music",
+		avatar: "/images/avatars/music.png",
+		unread_count: 0,
+		created_by: 3,
+		last_message: {
+			user: USERS[11],
+			time: "2026-06-08T16:12:00.000Z",
+			content: "Слушай этот трек",
+		},
+	},
+	{
+		id: 13,
+		title: "Support",
+		avatar: "/images/avatars/support.png",
+		unread_count: 6,
+		created_by: 10,
+		last_message: {
+			user: USERS[12],
+			time: "2026-06-08T16:55:00.000Z",
+			content: "Клиент подтвердил что проблема полностью решена",
+		},
+	},
+	{
+		id: 14,
+		title: "QA Team",
+		avatar: "/images/avatars/qa.png",
+		unread_count: 8,
+		created_by: 4,
+		last_message: {
+			user: USERS[13],
+			time: "2026-06-08T17:23:00.000Z",
+			content: "Нашли несколько критических багов после регрессионного тестирования",
+		},
+	},
+	{
+		id: 15,
+		title: "Coffee Break",
+		avatar: "/images/avatars/coffee.png",
+		unread_count: 1,
+		created_by: 5,
+		last_message: {
+			user: USERS[14],
+			time: "2026-06-08T18:01:00.000Z",
+			content: "Кофе",
+		},
+	},
+];
+
+export const MESSAGES: IMessage[] = [
+	{
+		user: USERS[1],
+		time: "2025-06-12T08:15:00.000Z",
+		content: "Привет, как дела?",
+	},
+	{
+		user: USERS[0],
+		time: "2025-06-12T08:16:00.000Z",
+		content: "Привет, отлично. У тебя как?",
+	},
+	{
+		user: USERS[1],
+		time: "2026-04-12T08:17:00.000Z",
+		content: "Тоже хорошо. Как продвигается мессенджер?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-05-12T08:18:00.000Z",
+		content: "Верстаю список чатов и экран переписки.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-09T08:19:00.000Z",
+		content: "Handlebars всё ещё используешь?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-10T08:20:00.000Z",
+		content: "Да, по условиям курса.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-11T08:22:00.000Z",
+		content: "Поняла. Уже сделал компоненты?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:23:00.000Z",
+		content: "Инпуты, кнопки и ссылки готовы.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:24:00.000Z",
+		content: "Отлично",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:26:00.000Z",
+		content: "Сейчас занимаюсь списком сообщений.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:27:00.000Z",
+		content: "Не забудь про состояние пустого чата.",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:28:00.000Z",
+		content: "Да, сделал заглушку с текстом.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:30:00.000Z",
+		content: "Выберите чат, чтобы начать общение?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:31:00.000Z",
+		content: "Именно так.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:33:00.000Z",
+		content: "Красиво получилось?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:34:00.000Z",
+		content: "Пока что больше похоже на Telegram.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:35:00.000Z",
+		content: "Это скорее плюс.",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:37:00.000Z",
+		content: "Согласен.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:40:00.000Z",
+		content: "Когда планируешь подключать API?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:42:00.000Z",
+		content: "После завершения всей вёрстки.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:43:00.000Z",
+		content: "Логично.",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:45:00.000Z",
+		content: "Хочу сначала привести архитектуру в порядок.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:46:00.000Z",
+		content: "Используешь роутер?",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:47:00.000Z",
+		content: "Да, написал свой небольшой Router класс.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:49:00.000Z",
+		content: "Неплохо.",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:50:00.000Z",
+		content: "Осталось разобраться с состоянием приложения.",
+	},
+	{
+		user: USERS[1],
+		time: "2026-06-12T08:51:00.000Z",
+		content: "Удачи тогда 🚀",
+	},
+	{
+		user: USERS[0],
+		time: "2026-06-12T08:52:00.000Z",
+		content: "Спасибо!",
+	},
+];
+
+export const CURRENT_CHAT: ICurrentChat = {
+	...CHATS[0],
+	history: MESSAGES
+};

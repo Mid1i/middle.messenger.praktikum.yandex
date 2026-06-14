@@ -1,0 +1,21 @@
+<li class="chat-message {{#if isIncoming}} chat-message_incoming {{/if}}">
+	{{#if isIncoming}}
+		{{> base-avatar 
+			alt="Аватар пользователя {{ user.first_name }} {{ user.second_name }}" 
+			url="{{ user.avatar }}" 
+		}}
+	{{/if}}
+	<div class="chat-message__content">
+		<div class="chat-message__header">
+			<span class="chat-message__title base-text base-text_medium">
+				{{#if isIncoming}}
+					{{ user.first_name }} {{ user.second_name }}
+				{{else}}
+					Вы
+				{{/if}}
+			</span>
+			<span class="chat-message__date base-text">{{ format-date time }}</span>
+		</div>
+		<p class="chat-message__message-text base-text">{{ content }}</p>
+	</div>
+</li>

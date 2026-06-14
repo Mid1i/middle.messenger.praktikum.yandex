@@ -1,0 +1,72 @@
+<main class="profile-settings">
+	{{> aside-panel activePage="profile" }}
+	<div class="profile-settings__content">
+		{{#with currentUser}}
+			<header class="profile-settings__header">
+				<div class="profile-settings__header-wrapper">
+					<button class="profile-settings__header-avatar" type="button">
+						{{> base-avatar url="{{ avatar }}" }}
+						<span class="profile-settings__change-avatar base-text base-text_size_m">Поменять <br/> аватар</span>
+					</button>
+					<div class="profile-settings__header-info">
+						<h2 class="profile-settings__header-title base-text base-text_size_l base-text_weight_medium">{{ first_name }} {{ second_name }}</h2>
+						<span class="profile-settings__header-login base-text base-text_size_m">@{{ login }}</span>
+					</div>
+				</div>
+				{{#> base-button className="profile-settings__logout-button" }}
+					Выйти
+					<div class="profile-settings__logout-icon rect-size masked-block"></div>
+				{{/base-button}}
+			</header>
+		{{/with}}
+		<div class="profile-settings__main">
+			<h1 class="profile-settings__title base-text base-text_size_xl base-text_weight_medium">Профиль</h1>
+			<form class="profile-settings__form">
+				{{#each config}}
+					{{> base-input this readonly=true variant="secondary" }}
+				{{/each}}
+				{{#> base-button className="profile-settings__data-button" type="submit" }}
+					Изменить данные
+				{{/base-button}}
+				<button class="profile-settings__password-button base-text base-text_size_m base-text_weight_medium" type="button">
+					Изменить пароль
+				</button>
+			</form>
+		</div>
+	</div>
+
+	{{#> base-popup ariaLabel="Изменение аватара" }}
+		<form class="profile-settings__profile-popup profile-popup">
+			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Загрузите новый аватар пользователя</h3>
+			<label class="profile-popup__upload-field">
+				<div class="profile-popup__upload-icon rect-size masked-block"></div>
+				<p class="profile-popup__hint-text base-text base-text_size_m base-text_weight_semibold">Перетащите файл сюда <br/> или выберите на устройстве</p>
+
+				<input 
+					class="profile-popup__input"
+					accept="image/*"
+					type="file"
+					id="avatar"
+					name="avatar"	
+				/>
+			</label>
+			{{#> base-button type="submit" }}
+				Сохранить
+			{{/base-button}}
+		</form>
+	{{/base-popup}}
+
+	{{#> base-popup ariaLabel="Изменение пароля" }}
+		<form class="profile-settings__profile-popup profile-popup">
+			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Изменение пароля</h3>
+			<div class="profile-popup__form-fields">
+				{{#each passwordConfig }}
+					{{> base-input }}
+				{{/each}}
+			</div>
+			{{#> base-button type="submit" }}
+				Сохранить
+			{{/base-button}}
+		</form>
+	{{/base-popup}}
+</main>

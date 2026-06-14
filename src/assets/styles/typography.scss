@@ -1,0 +1,50 @@
+.base-text {
+	--_font-size: var(--font-size, 16px);
+	--_line-height: var(--line-height, auto);
+	--_font-weight: var(--font-weight, 400);
+
+	font-family: "Roboto Flex", sans-serif;
+	font-size: var(--_font-size);
+	font-weight: var(--_font-weight);
+	line-height: var(--_line-height);
+
+	&_weight_regular {
+		--font-weight: var(--Regular-font-weight);
+	}
+
+	&_weight_medium {
+		--font-weight: var(--Medium-font-weight);
+	}
+
+	&_weight_semibold {
+		--font-weight: var(--Semibold-font-weight);
+	}
+
+	&_weight_bold {
+		--font-weight: var(--Bold-font-weight);
+	}
+
+	&_size_xs {
+		--font-size: var(--XS-font-size);
+	}
+
+	&_size_s {
+		--font-size: var(--S-font-size);
+	}
+
+	&_size_m {
+		--font-size: var(--M-font-size);
+	}
+
+	&_size_l {
+		--font-size: var(--L-font-size);
+	}
+
+	&_size_xl {
+		--font-size: var(--XL-font-size);
+	}
+
+	&_size_xxl {
+		--font-size: var(--XXL-font-size);
+	}
+}

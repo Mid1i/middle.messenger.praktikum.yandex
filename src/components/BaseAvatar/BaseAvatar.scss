@@ -1,0 +1,21 @@
+.base-avatar {
+	--_base-avatar-size: var(--base-avatar-size, 32px);
+	--_base-avatar-border-color: var(--base-avatar-border-color, var(--border-base-primary));
+	--_base-avatar-border-width: var(--base-avatar-border-width, 2px);
+}
+
+.base-avatar {
+	--size: var(--_base-avatar-size);
+
+	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: var(--text-base-primary);
+	border-radius: 100%;
+	border: var(--_base-avatar-border-width) solid var(--_base-avatar-border-color);
+
+	transition: border-color 0.3s, border-width 0.3s;
+}

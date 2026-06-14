@@ -1,0 +1,27 @@
+<aside class="aside-panel">
+	<nav class="aside-panel__navigation" aria-label="Основная навигация">
+		<div class="aside-panel__logo-wrapper rect-size">
+			<img
+				class="aside-panel__logo-image"
+				src="/logo.svg"
+				alt="Логотип мессенджера «ME Чат»"
+			/>
+		</div>
+		<a
+			class="aside-panel__link aside-panel__link_chats {{#if (is-equal activePage 'chats')}} aside-panel__link_active {{/if}}"
+			href="#"
+			data-href="chats"
+			aria-label="Перейти к чатам"
+		>
+			<div class="aside-panel__icon rect-size masked-block"></div>
+		</a>
+		<a 
+			class="aside-panel__link aside-panel__link_profile {{#if (is-equal activePage 'profile')}} aside-panel__link_active {{/if}}" 
+			href="#" 
+			data-href="profile"
+			aria-label="Перейти в профиль"
+		>
+			{{> base-avatar alt="Профиль" url="#" }}
+		</a>
+	</nav>
+</aside>

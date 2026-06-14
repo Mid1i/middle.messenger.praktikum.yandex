@@ -1,0 +1,11 @@
+.base-link {
+	transition: color 0.3s;
+
+	&_variant_primary {
+		color: var(--base-link-text-primary);
+
+		&:hover, &:focus-visible {
+			text-decoration: underline;
+		}
+	}
+}

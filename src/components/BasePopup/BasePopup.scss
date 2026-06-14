@@ -1,0 +1,44 @@
+.base-popup {
+	position: fixed;
+	inset: 0px;
+	z-index: 100;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	height: 100%;
+	width: 100%;
+
+	background: transparent;
+
+	pointer-events: none;
+
+	transition: background 0.3s, backdrop-filter 0.3s;
+
+	&_opened {
+		background: var(--background-base-overlay);
+		backdrop-filter: blur(12px);
+
+		pointer-events: all;
+
+		.base-popup__content {
+			opacity: 1;
+		}
+	}
+
+	&__content {
+		z-index: 101;
+
+		width: 640px;
+
+		background: var(--background-base-primary);
+		border: 1px solid var(--border-base-primary);
+		border-radius: 24px;
+
+		opacity: 0;
+
+		transition: opacity 0.3s;
+	}
+}
+

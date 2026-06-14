@@ -1,0 +1,23 @@
+.welcome-plug {
+	padding: 100px;
+}
+
+.welcome-navigation {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+
+	&__el {
+		cursor: pointer;
+
+		color: var(--text-base-secondary);
+
+		transition: color 0.3s;
+
+		@media(hover) {
+			&:hover {
+				color: var(--text-base-primary);
+			}
+		}
+	}
+}

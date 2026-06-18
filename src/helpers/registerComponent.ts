@@ -9,7 +9,7 @@ type ComponentConstructor<Props extends IBaseBlockOwnProps> = {
 	componentName: string;
 };
 
-interface ComponentHelperOptions<Props> {
+interface IComponentHelperOptions<Props> {
 	hash: Props & { ref?: string };
 	data?: {
 		root: IBaseBlockOwnProps;
@@ -22,7 +22,7 @@ export default function registerComponent<Props extends IBaseBlockOwnProps>(
 	Component: ComponentConstructor<Props>,
 ) {
 	Handlebars.registerHelper(Component.componentName, function (options: HelperOptions) {
-		const { hash, data } = options as unknown as ComponentHelperOptions<Props>;
+		const { hash, data } = options as unknown as IComponentHelperOptions<Props>;
 
 		if (!data) {
 			throw new Error("Component helper requires Handlebars data");

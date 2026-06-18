@@ -6,7 +6,7 @@
 
 .base-input {
 	width: 100%;
-	
+
 	&_variant_primary {
 		display: flex;
 		flex-direction: column;
@@ -19,7 +19,7 @@
 		gap: 150px;
 
 		.base-input__label {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 
@@ -36,8 +36,10 @@
 		border: 1px solid transparent;
 		border-radius: var(--_base-input-border-radius);
 
-		transition: background 0.3s, border-color 0.3s;
-		
+		transition:
+			background 0.3s,
+			border-color 0.3s;
+
 		&::placeholder {
 			color: var(--base-input-placeholder);
 			font-family: inherit;
@@ -52,7 +54,7 @@
 
 		&:focus-visible:not(.base-input__input_invalid, :read-only) {
 			background: transparent;
-			border-color: var(--base-input-border-active); 
+			border-color: var(--base-input-border-active);
 		}
 
 		&:read-only {
@@ -60,7 +62,7 @@
 		}
 
 		&_invalid {
-			border-color: var(--base-input-border-error); 
+			border-color: var(--base-input-border-error);
 		}
 	}
 

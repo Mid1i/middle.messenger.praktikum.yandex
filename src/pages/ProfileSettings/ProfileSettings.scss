@@ -12,7 +12,7 @@
 		gap: 112px;
 
 		padding: 16px;
-		padding-left: 0px;
+		padding-left: 0;
 	}
 
 	&__header {
@@ -23,7 +23,7 @@
 
 		background: url("/welcome-background.png") center center no-repeat;
 		background-size: cover;
-		border-radius: 24px 24px 0px 0px;
+		border-radius: 24px 24px 0 0;
 	}
 
 	&__header-wrapper {
@@ -63,23 +63,25 @@
 
 		&::before {
 			position: absolute;
-			inset: 0px;
+			inset: 0;
 
 			height: 100%;
 			width: 100%;
 
 			transition: background 0.3s;
-			
+
 			content: "";
 		}
 
-		&:hover::before, &:focus-visible {
+		&:hover::before,
+		&:focus-visible {
 			background: rgb(0 0 0 / 70%);
 		}
-		
-		&:hover > *, &:focus-visible > * {
+
+		&:hover > *,
+		&:focus-visible > * {
 			opacity: 1;
-		} 
+		}
 	}
 
 	&__header-info {
@@ -135,10 +137,11 @@
 
 	&__password-button {
 		align-self: center;
-		
+
 		color: var(--base-link-text-primary);
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			text-decoration: underline;
 		}
 	}
@@ -169,9 +172,12 @@
 
 		color: var(--text-base-secondary);
 
-		transition: background 0.3s, border-color 0.3s;
+		transition:
+			background 0.3s,
+			border-color 0.3s;
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			background: var(--background-base-primary-hover);
 		}
 

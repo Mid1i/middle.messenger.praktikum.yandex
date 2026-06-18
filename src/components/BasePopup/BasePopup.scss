@@ -1,6 +1,6 @@
 .base-popup {
 	position: fixed;
-	inset: 0px;
+	inset: 0;
 	z-index: 100;
 
 	display: flex;
@@ -14,7 +14,9 @@
 
 	pointer-events: none;
 
-	transition: background 0.3s, backdrop-filter 0.3s;
+	transition:
+		background 0.3s,
+		backdrop-filter 0.3s;
 
 	&_opened {
 		background: var(--background-base-overlay);
@@ -41,4 +43,3 @@
 		transition: opacity 0.3s;
 	}
 }
-

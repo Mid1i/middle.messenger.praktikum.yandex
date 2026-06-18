@@ -9,13 +9,21 @@ interface IPlugItem<T extends BaseObj = BaseObj> {
 	text: string;
 	href: PageType;
 	config?: T;
-};
+}
 
 export const PLUG_ITEMS: IPlugItem[] = [
 	{ text: "Вход", href: "signIn", config: { config: SIGN_IN_INPUTS } },
-	{ text: "Регистрация", href: "signUp", config: { config: SIGN_UP_INPUTS }  },
+	{ text: "Регистрация", href: "signUp", config: { config: SIGN_UP_INPUTS } },
 	{ text: "404 ошибка", href: "notFound" },
 	{ text: "500 ошибка", href: "serverError" },
 	{ text: "Список чатов", href: "chats", config: { config: CHATS, currentChat: CURRENT_CHAT } },
-	{ text: "Профиль", href: "profile", config: { config: PROFILE_INPUTS, currentUser: CURRENT_USER, passwordConfig: PASSWORD_INPUTS } },
+	{
+		text: "Профиль",
+		href: "profile",
+		config: {
+			config: PROFILE_INPUTS,
+			currentUser: CURRENT_USER,
+			passwordConfig: PASSWORD_INPUTS,
+		},
+	},
 ];

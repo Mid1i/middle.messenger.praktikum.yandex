@@ -2,7 +2,7 @@
 	--base-avatar-size: 48px;
 
 	padding: 48px 36px 52px;
-	
+
 	&__navigation {
 		display: flex;
 		flex-direction: column;
@@ -33,7 +33,7 @@
 
 		transition: background 0.3s;
 
-		@media(hover) {
+		@media (hover) {
 			&:hover {
 				background: var(--background-button-primary-hover);
 			}

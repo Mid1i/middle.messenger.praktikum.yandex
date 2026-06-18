@@ -1,6 +1,6 @@
-export type BaseObj = Record<string, any>;
+export type BaseObj = Record<string, unknown>;
 
-export type PageType = 
+export type PageType =
 	| "plug"
 	| "signIn"
 	| "signUp"
@@ -17,4 +17,4 @@ export interface IUser {
 	email: string;
 	login: string;
 	phone: string;
-};
+}

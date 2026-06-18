@@ -17,5 +17,7 @@
 	border-radius: 100%;
 	border: var(--_base-avatar-border-width) solid var(--_base-avatar-border-color);
 
-	transition: border-color 0.3s, border-width 0.3s;
+	transition:
+		border-color 0.3s,
+		border-width 0.3s;
 }

@@ -7,7 +7,10 @@
 	align-items: center;
 	justify-content: center;
 
-	transition: background 0.3s, border-color 0.3s, opacity 0.3s;
+	transition:
+		background 0.3s,
+		border-color 0.3s,
+		opacity 0.3s;
 
 	&_variant_primary {
 		color: var(--base-button-text-primary);
@@ -23,7 +26,8 @@
 			opacity: 0.5;
 		}
 
-		&:hover:not(:disabled), &:focus-visible:not(:disabled) {
+		&:hover:not(:disabled),
+		&:focus-visible:not(:disabled) {
 			background: var(--base-button-background-primary-hover);
 		}
 	}
@@ -35,7 +39,8 @@
 		border: 1px solid transparent;
 		border-radius: 100%;
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			background: transparent;
 			border-color: var(--border-base-primary);
 		}
@@ -50,7 +55,8 @@
 
 		border-radius: 12px;
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			background: var(--background-button-primary-hover);
 		}
 
@@ -61,7 +67,7 @@
 
 	&_variant_quaternary {
 		--size: var(--_base-button-size);
-		
+
 		background: var(--background-button-secondary);
 		border-radius: 12px;
 
@@ -69,7 +75,8 @@
 
 		transition: background 0.3s;
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			background: var(--background-button-secondary-hover);
 		}
 

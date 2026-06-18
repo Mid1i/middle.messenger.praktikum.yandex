@@ -14,7 +14,7 @@
 
 		transition: color 0.3s;
 
-		@media(hover) {
+		@media (hover) {
 			&:hover {
 				color: var(--text-base-primary);
 			}

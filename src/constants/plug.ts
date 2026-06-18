@@ -6,7 +6,7 @@ import SignUp from "@/pages/SignUp";
 import NotFound from "@/pages/NotFound";
 import ServerError from "@/pages/ServerError";
 import ChatsCommunication from "@/pages/ChatsCommunication";
-import ProfileSettings from "@/pages/ProfileSettings"
+import ProfileSettings from "@/pages/ProfileSettings";
 
 export const PAGE_CONFIG: Record<PageType, string> = {
 	plug: WelcomePlug,
@@ -15,5 +15,5 @@ export const PAGE_CONFIG: Record<PageType, string> = {
 	notFound: NotFound,
 	serverError: ServerError,
 	chats: ChatsCommunication,
-	profile: ProfileSettings
+	profile: ProfileSettings,
 };

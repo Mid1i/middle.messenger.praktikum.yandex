@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	
+
 	padding: 12px;
 
 	width: 100%;
@@ -13,7 +13,8 @@
 
 	transition: background 0.3s;
 
-	&:hover, &:focus-visible {
+	&:hover,
+	&:focus-visible {
 		background: var(--background-base-primary-hover);
 	}
 
@@ -27,7 +28,7 @@
 		flex: 1 1 auto;
 		flex-direction: column;
 
-		min-width: 0px;
+		min-width: 0;
 	}
 
 	&__text {
@@ -36,7 +37,7 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 
-		min-width: 0px;
+		min-width: 0;
 	}
 
 	&__counter {

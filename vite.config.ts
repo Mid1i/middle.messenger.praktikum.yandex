@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 
-
 export default defineConfig({
 	resolve: {
 		alias: {
@@ -12,6 +11,6 @@ export default defineConfig({
 			"@/modules": "/src/modules",
 			"@/pages": "/src/pages",
 			"@/types": "/src/types",
-		}
-	}
+		},
+	},
 });

@@ -18,3 +18,5 @@ export interface IUser {
 	login: string;
 	phone: string;
 }
+
+export type EventListType = Partial<Record<keyof HTMLElementEventMap, (e: Event) => void>>;

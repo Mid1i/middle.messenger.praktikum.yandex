@@ -6,7 +6,7 @@ import "@/assets/styles/index.scss";
 
 import AsidePanel from "@/components/AsidePanel";
 import BaseAvatar from "@/components/BaseAvatar";
-import BaseButton from "@/components/BaseButton";
+import { template } from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import BaseLink from "@/components/BaseLink";
 import BasePopup from "@/components/BasePopup";
@@ -23,7 +23,7 @@ import setDefault from "@/helpers/setDefault";
 
 Handlebars.registerPartial("aside-panel", AsidePanel);
 Handlebars.registerPartial("base-avatar", BaseAvatar);
-Handlebars.registerPartial("base-button", BaseButton);
+Handlebars.registerPartial("base-button", template);
 Handlebars.registerPartial("base-input", BaseInput);
 Handlebars.registerPartial("base-link", BaseLink);
 Handlebars.registerPartial("base-popup", BasePopup);
@@ -35,6 +35,12 @@ Handlebars.registerHelper("is-odd", (index: number) => index % 2 !== 0);
 Handlebars.registerHelper("is-equal", isEqual);
 Handlebars.registerHelper("not-equal", notEqual);
 Handlebars.registerHelper("set-default", setDefault);
+
+// import BaseButton from "@/components/BaseButton";
+
+// const baseButton = new BaseButton({});
+// const BaseButtonElement = baseButton.element();
+// document.body.appendChild(BaseButtonElement);
 
 class App {
 	private state: PageType;

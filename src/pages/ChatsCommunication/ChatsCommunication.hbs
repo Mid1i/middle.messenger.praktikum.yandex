@@ -1,25 +1,25 @@
 <main class="chats-communication">
-	{{> aside-panel activePage="chats" }}
+	{{{ AsidePanel activePage="chats" }}}
 	<div class="chats-communication__content">
 		<section class="chats-communication__chats chats-section">
 			<header class="chats-section__header">
 				<h1 class="chats-section__title base-text base-text_size_l base-text_weight_medium">Чаты</h1>
-				{{#> base-button ariaLabel="Новый чат" variant="secondary" }}
+				{{#BaseButton ariaLabel="Новый чат" variant="secondary" }}
 					<div class="chats-section__add-icon rect-size masked-block"></div>
-				{{/base-button}}
+				{{/BaseButton}}
 			</header>
 			<div class="chats-section__search">
-				{{> base-input 
+				{{{ BaseInput
 					placeholder="Найти чат..." 
 					name="search" 
 					id="search" 
 					type="text" 
-				}}
+				}}}
 				<div class="chats-section__search-icon rect-size masked-block"></div>
 			</div>
 			<div class="chats-section__list">
-				{{#each config}}
-					{{> chats-list-item this isActive=(is-equal 1 @index) }}
+				{{#each chats}}
+					{{{ ChatsListItem isActive=(is-equal 1 @index) }}}
 				{{/each}}
 			</div>
 		</section>
@@ -28,17 +28,17 @@
 				<section class="chat-window__inner">
 					<header class="chat-window__header">
 						<div class="chat-window__header-info">
-							{{> base-avatar alt="Аватар чата {{ title }}" url="{{ avatar }}" }}
+							{{{ BaseAvatar alt="Аватар чата {{ title }}" url=avatar }}}
 							<h3 class="chat-window__title base-text base-text_size_l base-text_weight_medium">{{ title }}</h3>
 						</div>
-						{{#> base-button ariaLabel="Открыть настройки чата" variant="secondary" }}
+						{{#BaseButton ariaLabel="Открыть настройки чата" variant="secondary" }}
 							<div class="chat-window__options-icon rect-size masked-block"></div>
-						{{/base-button}}
+						{{/BaseButton}}
 					</header>
 					<div class="chat-window__content">
 						<ul class="chat-window__message-list">
 							{{#each history}}
-								{{> chat-message this isIncoming=(is-odd @index) }}
+								{{{ ChatMessage isIncoming=(is-odd @index) }}}
 							{{/each}}
 						</ul>
 					</div>
@@ -51,22 +51,22 @@
 								name="message"
 								id="message"	
 							></textarea>
-							{{#> base-button 
+							{{#BaseButton 
 								 ariaLabel="Прикрепить вложение"
 								 className="chat-window__attach-button" 
 								 variant="tertiary" 
 								 type="button"
 							}}
 								<div class="chat-window__attach-icon rect-size masked-block"></div>
-							{{/base-button}}
-							{{#> base-button
+							{{/BaseButton}}
+							{{#BaseButton
 								 ariaLabel="Отправить сообщение"
 								 className="chat-window__send-button"
 								 variant="quaternary"
 								 type="submit"
 							}}
 								<div class="chat-window__send-icon rect-size masked-block"></div>
-							{{/base-button}}
+							{{/BaseButton}}
 						</form>
 					</footer>
 				</section>

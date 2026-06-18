@@ -1,3 +1,5 @@
+import type { IBaseBlockOwnProps } from "@/components/BaseBlock";
+import type BaseBlock from "@/components/BaseBlock";
 import type { PageType } from "@/types";
 
 import WelcomePlug from "@/pages/WelcomePlug";
@@ -8,7 +10,9 @@ import ServerError from "@/pages/ServerError";
 import ChatsCommunication from "@/pages/ChatsCommunication";
 import ProfileSettings from "@/pages/ProfileSettings";
 
-export const PAGE_CONFIG: Record<PageType, string> = {
+export type PageConstructor = new (props?: IBaseBlockOwnProps) => BaseBlock<IBaseBlockOwnProps>;
+
+export const PAGE_CONFIG: Record<PageType, PageConstructor> = {
 	plug: WelcomePlug,
 	signIn: SignIn,
 	signUp: SignUp,

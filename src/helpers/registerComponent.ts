@@ -21,36 +21,65 @@ let uniqueId = 0;
 export default function registerComponent<Props extends IBaseBlockOwnProps>(
 	Component: ComponentConstructor<Props>,
 ) {
-	Handlebars.registerHelper(Component.componentName, function (options: HelperOptions) {
-		const { hash, data } = options as unknown as IComponentHelperOptions<Props>;
+	Handlebars.registerHelper(Component.componentName, function (
+			this: IBaseBlockOwnProps, 
+			options: HelperOptions
+		) {
+			const { hash, data } = options as unknown as IComponentHelperOptions<Props>;
+			
+			const parentRoot = data?.root ?? this;
+			const context = clearServiceProps(this);
 
-		if (!data) {
-			throw new Error("Component helper requires Handlebars data");
+			const slotRoot: IBaseBlockOwnProps = {
+				...context,
+				__children: [],
+				__refs: {},
+			};
+
+			const slotData = Handlebars.createFrame(data ?? {});
+			slotData.root = slotRoot;
+
+			const slot = options.fn?.(slotRoot, { data: slotData }) ?? "";
+
+			const component = new Component({
+				...context,
+				...hash,
+				slot,
+				__children: slotRoot.__children,
+				__refs: slotRoot.__refs,
+			} as Props);
+
+			const dataAttribute = `data-component-hbs-id="${++uniqueId}"`;
+
+			if (hash.ref) {
+				parentRoot.__refs ??= {};
+				parentRoot.__refs[hash.ref] = component.element();
+			}
+
+			parentRoot.__children ??= [];
+			parentRoot.__children.push({
+				component,
+				embed(node: DocumentFragment) {
+					const placeholder = node.querySelector(`[${dataAttribute}]`);
+
+					if (!placeholder) {
+						throw new Error(`Can't find data-id for component ${Component.componentName}`);
+					}
+
+					placeholder.replaceWith(component.element());
+				},
+			});
+
+			return `<div ${dataAttribute}></div>`;
 		}
+	);
+}
 
-		const dataAttribute = `data-component-hbs-id="${++uniqueId}"`;
-		const component = new Component(hash);
+function clearServiceProps<Props extends object>(props: Props) {
+	const result = { ...props };
 
-		if (hash.ref) {
-			data.root.__refs ??= {};
-			data.root.__refs[hash.ref] = component.element();
-		}
+	delete (result as IBaseBlockOwnProps).__children;
+	delete (result as IBaseBlockOwnProps).__refs;
 
-		data.root.__children ??= [];
-		data.root.__children.push({
-			component,
-			embed(node: DocumentFragment) {
-				const placeholder = node.querySelector(`[${dataAttribute}]`);
-
-				if (!placeholder) {
-					throw new Error(`Can't find data-id for component ${Component.componentName}`);
-				}
-
-				const element = component.element();
-				placeholder.replaceWith(element);
-			},
-		});
-
-		return `<div ${dataAttribute}></div>`;
-	});
+	return result;
 }

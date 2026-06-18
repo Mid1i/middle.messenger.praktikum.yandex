@@ -1,5 +1,8 @@
 import "./SignIn.scss";
-import SignIn from "./SignIn.hbs?raw";
+import SignIn from "./SignIn";
+import template from "./SignIn.hbs?raw";
 
+export type * from "./SignIn";
+
+export { template };
 export default SignIn;
-export { SIGN_IN_INPUTS } from "./constants";

@@ -1,5 +1,8 @@
 import "./ProfileSettings.scss";
-import ProfileSettings from "./ProfileSettings.hbs?raw";
+import ProfileSettings from "./ProfileSettings";
+import template from "./ProfileSettings.hbs?raw";
 
+export type * from "./ProfileSettings";
+
+export { template };
 export default ProfileSettings;
-export { CURRENT_USER, PROFILE_INPUTS, PASSWORD_INPUTS } from "./constants";

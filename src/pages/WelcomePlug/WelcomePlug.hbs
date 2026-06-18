@@ -1,12 +1,12 @@
 <main class="welcome-plug">
 	<nav class="welcome-plug__navigation welcome-navigation">
-		{{#each config}}
+		{{#each schema}}
 			<a
 				class="welcome-navigation__el base-text base-text_size_xl base-text_weight_medium"
 				data-href="{{ href }}"
 				href="#"
 			>
-				{{text}}
+				{{ text }}
 			</a>
 		{{/each}}
 	</nav>

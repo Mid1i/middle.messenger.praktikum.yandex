@@ -13,8 +13,8 @@
 
 	transition: background 0.3s;
 
-	&:hover,
-	&:focus-visible {
+	&:hover:not(&_active),
+	&:focus-visible:not(&_active) {
 		background: var(--background-base-primary-hover);
 	}
 

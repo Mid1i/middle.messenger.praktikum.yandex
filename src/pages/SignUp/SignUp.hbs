@@ -15,19 +15,19 @@
 			<p class="welcome-block__subtext base-text base-text_size_m">Создайте аккаунт, чтобы начать общение.</p>
 		</div>
 		<form class="sign-up__form form">
-			{{#each config}}
-				{{> base-input }}
+			{{#each formSchema}}
+				{{{ BaseInput }}}
 			{{/each}}
 
-			{{#> base-button type="submit" }} 
+			{{#BaseButton type="submit" }} 
 				Зарегистрироваться 
-			{{/base-button}}
+			{{/BaseButton}}
 		</form>
 		<span class="sign-up__subtext form-subtext">
 			Есть аккаунт?
-			{{#> base-link href="#" data-href="signIn" }}
+			{{#BaseLink href="#" data-href="signIn" }}
 				Войти
-			{{/base-link}}
+			{{/BaseLink}}
 		</span>
 	</div>
 	<div class="sign-up__aside"></div>

@@ -3,6 +3,7 @@ import type { EventListType } from "@/types";
 import Handlebars from "handlebars";
 
 export interface IBaseBlockOwnProps {
+	slot?: string;
 	__children?: Array<{
 		component: BaseBlock<IBaseBlockOwnProps>;
 		embed(node: DocumentFragment): void;

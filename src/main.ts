@@ -6,29 +6,20 @@ import "@/assets/styles/index.scss";
 
 import AsidePanel from "@/components/AsidePanel";
 import BaseAvatar from "@/components/BaseAvatar";
-import { template } from "@/components/BaseButton";
+import BaseButton from "@/components/BaseButton";
 import BaseInput from "@/components/BaseInput";
 import BaseLink from "@/components/BaseLink";
 import BasePopup from "@/components/BasePopup";
 import ChatMessage from "@/components/ChatMessage";
 import ChatsListItem from "@/components/ChatsListItem";
 
-import { PLUG_ITEMS } from "@/pages/WelcomePlug";
 import { PAGE_CONFIG } from "@/constants/plug";
 
+import registerComponent from "@/helpers/registerComponent";
 import formatDate from "@/helpers/formatDate";
 import isEqual from "@/helpers/isEqual";
 import notEqual from "@/helpers/notEqual";
 import setDefault from "@/helpers/setDefault";
-
-Handlebars.registerPartial("aside-panel", AsidePanel);
-Handlebars.registerPartial("base-avatar", BaseAvatar);
-Handlebars.registerPartial("base-button", template);
-Handlebars.registerPartial("base-input", BaseInput);
-Handlebars.registerPartial("base-link", BaseLink);
-Handlebars.registerPartial("base-popup", BasePopup);
-Handlebars.registerPartial("chat-message", ChatMessage);
-Handlebars.registerPartial("chats-list-item", ChatsListItem);
 
 Handlebars.registerHelper("format-date", formatDate);
 Handlebars.registerHelper("is-odd", (index: number) => index % 2 !== 0);
@@ -36,11 +27,14 @@ Handlebars.registerHelper("is-equal", isEqual);
 Handlebars.registerHelper("not-equal", notEqual);
 Handlebars.registerHelper("set-default", setDefault);
 
-// import BaseButton from "@/components/BaseButton";
-
-// const baseButton = new BaseButton({});
-// const BaseButtonElement = baseButton.element();
-// document.body.appendChild(BaseButtonElement);
+registerComponent(AsidePanel);
+registerComponent(BaseAvatar);
+registerComponent(BaseButton);
+registerComponent(BaseInput);
+registerComponent(BaseLink);
+registerComponent(BasePopup);
+registerComponent(ChatMessage);
+registerComponent(ChatsListItem);
 
 class App {
 	private state: PageType;
@@ -71,13 +65,9 @@ class App {
 	public render() {
 		if (!this.appElement || !this.state) return;
 
-		const currentPlug = PAGE_CONFIG[this.state];
+		const currentPlug = new PAGE_CONFIG[this.state]();
 
-		const itemConfig = PLUG_ITEMS.find((i) => i.href === this.state)?.config ?? {};
-		const currentConfig = this.state === "plug" ? { config: PLUG_ITEMS } : itemConfig;
-
-		const template = Handlebars.compile(currentPlug);
-		this.appElement.innerHTML = template(currentConfig);
+		this.appElement.replaceChildren(currentPlug.element());
 	}
 }
 

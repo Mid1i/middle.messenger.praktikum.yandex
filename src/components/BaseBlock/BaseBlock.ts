@@ -2,7 +2,7 @@ import type { EventListType } from "@/types";
 
 import Handlebars from "handlebars";
 
-export interface IBaseBlockOwnProps extends Object {
+export interface IBaseBlockOwnProps {
 	__children?: Array<{
 		component: BaseBlock<IBaseBlockOwnProps>;
 		embed(node: DocumentFragment): void;
@@ -18,7 +18,7 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 	protected props: Props = {} as Props;
 	protected events: EventListType = {};
 	protected refs: Record<string, Element> = {};
-	protected children: BaseBlock<object>[] = [];
+	protected children: BaseBlock<IBaseBlockOwnProps>[] = [];
 
 	private domElement: Element | null = null;
 
@@ -35,13 +35,13 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 	}
 
 	public setProps(props: Partial<Props>) {
-		this.props = { 
-			...this.props, 
-			...props, 
-			__children: [], 
-			__refs: [] 
+		this.props = {
+			...this.props,
+			...props,
+			__children: [],
+			__refs: {},
 		};
-		
+
 		this.render();
 	}
 
@@ -112,18 +112,15 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 		const defaultRefs = this.props?.__refs ?? {};
 		const fragmentRefs = fragment.querySelectorAll("[ref]");
 
-		this.refs = Array.from(fragmentRefs).reduce<Record<string, Element>>(
-			(list, element) => {
-				const key = element.getAttribute("ref");
+		this.refs = Array.from(fragmentRefs).reduce<Record<string, Element>>((list, element) => {
+			const key = element.getAttribute("ref");
 
-				if (key) {
-					list[key] = element;
-					element.removeAttribute("ref");
-				}
-				return list;
-			},
-			defaultRefs
-		);
+			if (key) {
+				list[key] = element;
+				element.removeAttribute("ref");
+			}
+			return list;
+		}, defaultRefs);
 
 		return fragment.firstChild as Element | null;
 	}

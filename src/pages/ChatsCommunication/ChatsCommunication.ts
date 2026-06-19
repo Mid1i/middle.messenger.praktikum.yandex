@@ -5,7 +5,7 @@ import BaseBlock from "@/components/BaseBlock";
 
 import template from "./ChatsCommunication.hbs?raw";
 
-import { CHATS, CURRENT_CHAT } from "./constants";
+import { CHATS, CURRENT_CHAT } from "@/models/ChatsModel";
 
 export interface IChatsCommunicationProps extends IBaseBlockOwnProps {
 	chats: IChatsItem[];

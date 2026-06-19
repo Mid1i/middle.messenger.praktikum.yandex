@@ -4,7 +4,8 @@ import type { ValidationRule } from "@/types";
 import BaseBlock from "@/components/BaseBlock";
 
 import template from "./BaseForm.hbs?raw";
-import validateValue from "@/utils/validation";
+
+import validateValue from "@/services/validation";
 
 export interface IBaseFormProps extends IBaseBlockOwnProps {
 	className?: string;

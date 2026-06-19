@@ -6,7 +6,8 @@ import BaseBlock from "@/components/BaseBlock";
 
 import template from "./ProfileSettings.hbs?raw";
 
-import { CURRENT_USER, PASSWORD_INPUTS, PROFILE_INPUTS } from "./constants";
+import { CURRENT_USER } from "@/models/UserModel";
+import { PASSWORD_INPUTS, PROFILE_INPUTS } from "./constants";
 
 export interface IProfileSettingsProps extends IBaseBlockOwnProps {
 	currentUser: IUser;

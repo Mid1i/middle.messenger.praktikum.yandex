@@ -19,19 +19,19 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 		super(props);
 
 		this.events = {
-			submit: (event) => this.handleSubmit(event),
+			submit: this.handleSubmit,
 		};
 	}
 
 	protected componentDidMount() {
-		this.element().addEventListener("blur", (event) => this.handleBlur(event), true);
+		this.element().addEventListener("blur", this.handleBlur, true);
 	}
 
 	protected componentWillUnmount() {
-		this.element().removeEventListener("blur", (event) => this.handleBlur(event), true);
+		this.element().removeEventListener("blur", this.handleBlur, true);
 	}
 
-	private handleBlur(event: Event) {
+	private handleBlur = (event: Event) => {
 		const field = event.target;
 
 		if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
@@ -39,7 +39,7 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 		}
 	}
 
-	private handleSubmit(event: Event) {
+	private handleSubmit = (event: Event) => {
 		event.preventDefault();
 
 		const form = event.target as HTMLFormElement;

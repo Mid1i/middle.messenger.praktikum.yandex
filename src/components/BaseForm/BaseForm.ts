@@ -4,7 +4,7 @@ import type { ValidationRule } from "@/types";
 import BaseBlock from "@/components/BaseBlock";
 
 import template from "./BaseForm.hbs?raw";
-import validateValue from "@/utils/validation"
+import validateValue from "@/utils/validation";
 
 export interface IBaseFormProps extends IBaseBlockOwnProps {
 	className?: string;
@@ -20,32 +20,21 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 
 		this.events = {
 			submit: (event) => this.handleSubmit(event),
-		}
+		};
 	}
 
 	protected componentDidMount() {
-		this.element().addEventListener(
-			"blur", 
-			(event) => this.handleBlur(event), 
-			true
-		);
+		this.element().addEventListener("blur", (event) => this.handleBlur(event), true);
 	}
 
 	protected componentWillUnmount() {
-		this.element().removeEventListener(
-			"blur", 
-			(event) => this.handleBlur(event), 
-			true
-		);
+		this.element().removeEventListener("blur", (event) => this.handleBlur(event), true);
 	}
 
 	private handleBlur(event: Event) {
 		const field = event.target;
 
-		if (
-			field instanceof HTMLInputElement ||
-			field instanceof HTMLTextAreaElement
-		) {
+		if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
 			this.validateField(field);
 		}
 	}
@@ -55,11 +44,10 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 
 		const form = event.target as HTMLFormElement;
 		const fields = form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>(
-			"input[data-validation-rule], textarea[data-validation-rule]"
+			"input[data-validation-rule], textarea[data-validation-rule]",
 		);
 
-		const result = Array.from(fields)
-			.map((field) => this.validateField(field))
+		const result = Array.from(fields).map((field) => this.validateField(field));
 
 		if (result.some((result) => !result)) {
 			return;

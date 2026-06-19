@@ -2,13 +2,7 @@ export type BaseObj = Record<string, unknown>;
 
 export type Nullable<T> = T | null;
 
-export type ValidationRule =
-	| "name"
-	| "login"
-	| "email"
-	| "password"
-	| "phone"
-	| "message";
+export type ValidationRule = "name" | "login" | "email" | "password" | "phone" | "message";
 
 export type PageType =
 	| "plug"

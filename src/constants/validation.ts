@@ -30,4 +30,4 @@ export const VALIDATION_RULES: Record<ValidationRule, IValidationConfig> = {
 		regexp: /\S/,
 		message: "Сообщение не должно быть пустым",
 	},
-}
+};

@@ -19,7 +19,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "ivanivanov",
 		defaultValue: CURRENT_USER.login,
 		type: "text",
-		validationRule: "login"
+		validationRule: "login",
 	},
 	{
 		label: "Имя",
@@ -28,7 +28,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иван",
 		defaultValue: CURRENT_USER.first_name,
 		type: "text",
-		validationRule: "name"
+		validationRule: "name",
 	},
 	{
 		label: "Фамилия",
@@ -37,7 +37,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иванов",
 		defaultValue: CURRENT_USER.second_name,
 		type: "text",
-		validationRule: "name"
+		validationRule: "name",
 	},
 	{
 		label: "Отображаемое имя",
@@ -46,7 +46,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иван",
 		defaultValue: CURRENT_USER.display_name,
 		type: "text",
-		validationRule: "login"
+		validationRule: "login",
 	},
 	{
 		label: "Email",
@@ -55,7 +55,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "example@yandex.ru",
 		defaultValue: CURRENT_USER.email,
 		type: "text",
-		validationRule: "email"
+		validationRule: "email",
 	},
 	{
 		label: "Телефон",
@@ -64,7 +64,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "+7 (900) 111-11-11",
 		defaultValue: CURRENT_USER.phone,
 		type: "text",
-		validationRule: "phone"
+		validationRule: "phone",
 	},
 ];
 
@@ -75,7 +75,7 @@ export const PASSWORD_INPUTS: IBaseInputProps[] = [
 		id: "old_password",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
 		type: "password",
-		validationRule: "password"
+		validationRule: "password",
 	},
 	{
 		label: "Новый пароль",
@@ -83,7 +83,7 @@ export const PASSWORD_INPUTS: IBaseInputProps[] = [
 		id: "new_password",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
 		type: "password",
-		validationRule: "password"
+		validationRule: "password",
 	},
 	{
 		label: "Повторите новый пароль",
@@ -91,6 +91,6 @@ export const PASSWORD_INPUTS: IBaseInputProps[] = [
 		id: "new_password-repeat",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
 		type: "password",
-		validationRule: "password"
+		validationRule: "password",
 	},
 ];

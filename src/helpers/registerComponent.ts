@@ -9,11 +9,13 @@ type ComponentConstructor<Props extends IBaseBlockOwnProps> = {
 	componentName: string;
 };
 
+interface IComponentData {
+	root: IBaseBlockOwnProps;
+}
+
 interface IComponentHelperOptions<Props> {
 	hash: Props & { ref?: string };
-	data?: {
-		root: IBaseBlockOwnProps;
-	};
+	data?: IComponentData;
 }
 
 let uniqueId = 0;
@@ -21,12 +23,11 @@ let uniqueId = 0;
 export default function registerComponent<Props extends IBaseBlockOwnProps>(
 	Component: ComponentConstructor<Props>,
 ) {
-	Handlebars.registerHelper(Component.componentName, function (
-			this: IBaseBlockOwnProps, 
-			options: HelperOptions
-		) {
+	Handlebars.registerHelper(
+		Component.componentName,
+		function (this: IBaseBlockOwnProps, options: HelperOptions) {
 			const { hash, data } = options as unknown as IComponentHelperOptions<Props>;
-			
+
 			const parentRoot = data?.root ?? this;
 			const context = clearServiceProps(this);
 
@@ -36,10 +37,11 @@ export default function registerComponent<Props extends IBaseBlockOwnProps>(
 				__refs: {},
 			};
 
-			const slotData = Handlebars.createFrame(data ?? {});
+			const slotData = Handlebars.createFrame(data ?? {}) as IComponentData;
 			slotData.root = slotRoot;
 
-			const slot = options.fn?.(slotRoot, { data: slotData }) ?? "";
+			const slotResult = options.fn?.(slotRoot, { data: slotData });
+			const slot = typeof slotResult === "string" ? slotResult : "";
 
 			const component = new Component({
 				...context,
@@ -47,7 +49,7 @@ export default function registerComponent<Props extends IBaseBlockOwnProps>(
 				slot,
 				__children: slotRoot.__children,
 				__refs: slotRoot.__refs,
-			} as Props);
+			});
 
 			const dataAttribute = `data-component-hbs-id="${++uniqueId}"`;
 
@@ -63,7 +65,9 @@ export default function registerComponent<Props extends IBaseBlockOwnProps>(
 					const placeholder = node.querySelector(`[${dataAttribute}]`);
 
 					if (!placeholder) {
-						throw new Error(`Can't find data-id for component ${Component.componentName}`);
+						throw new Error(
+							`Can't find data-id for component ${Component.componentName}`,
+						);
 					}
 
 					placeholder.replaceWith(component.element());
@@ -71,7 +75,7 @@ export default function registerComponent<Props extends IBaseBlockOwnProps>(
 			});
 
 			return `<div ${dataAttribute}></div>`;
-		}
+		},
 	);
 }
 

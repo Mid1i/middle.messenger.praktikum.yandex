@@ -23,7 +23,7 @@ export default class ProfileSettings extends BaseBlock<IProfileSettingsProps> {
 		super({
 			currentUser: CURRENT_USER,
 			formSchema: PROFILE_INPUTS,
-			passwordFormSchema: PASSWORD_INPUTS
+			passwordFormSchema: PASSWORD_INPUTS,
 		});
 	}
 }

@@ -22,7 +22,7 @@ export default class ChatsCommunication extends BaseBlock<IChatsCommunicationPro
 	constructor() {
 		super({
 			chats: CHATS,
-			currentChat: CURRENT_CHAT
+			currentChat: CURRENT_CHAT,
 		});
 	}
 }

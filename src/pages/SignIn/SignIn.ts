@@ -18,7 +18,7 @@ export default class SignIn extends BaseBlock<ISignInProps> {
 
 	constructor() {
 		super({
-			formSchema: SIGN_IN_INPUTS
+			formSchema: SIGN_IN_INPUTS,
 		});
 	}
 }

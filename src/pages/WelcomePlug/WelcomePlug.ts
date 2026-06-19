@@ -23,7 +23,7 @@ export default class WelcomePlug extends BaseBlock<IWelcomePlugProps> {
 
 	constructor() {
 		super({
-			schema: PLUG_ITEMS
+			schema: PLUG_ITEMS,
 		});
 	}
 }

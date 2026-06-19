@@ -14,7 +14,7 @@
 			<h1 class="welcome-block__title base-text base-text_size_xl base-text_weight_medium">Регистрация</h1>
 			<p class="welcome-block__subtext base-text base-text_size_m">Создайте аккаунт, чтобы начать общение.</p>
 		</div>
-		<form class="sign-up__form form">
+		{{#BaseForm}}
 			{{#each formSchema}}
 				{{{ BaseInput }}}
 			{{/each}}
@@ -22,7 +22,7 @@
 			{{#BaseButton type="submit" }} 
 				Зарегистрироваться 
 			{{/BaseButton}}
-		</form>
+		{{/BaseForm}}
 		<span class="sign-up__subtext form-subtext">
 			Есть аккаунт?
 			{{#BaseLink href="#" data-href="signIn" }}

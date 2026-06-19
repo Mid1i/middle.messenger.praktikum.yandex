@@ -19,6 +19,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "ivanivanov",
 		defaultValue: CURRENT_USER.login,
 		type: "text",
+		validationRule: "login"
 	},
 	{
 		label: "Имя",
@@ -27,6 +28,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иван",
 		defaultValue: CURRENT_USER.first_name,
 		type: "text",
+		validationRule: "name"
 	},
 	{
 		label: "Фамилия",
@@ -35,6 +37,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иванов",
 		defaultValue: CURRENT_USER.second_name,
 		type: "text",
+		validationRule: "name"
 	},
 	{
 		label: "Отображаемое имя",
@@ -43,6 +46,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "Иван",
 		defaultValue: CURRENT_USER.display_name,
 		type: "text",
+		validationRule: "login"
 	},
 	{
 		label: "Email",
@@ -51,6 +55,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "example@yandex.ru",
 		defaultValue: CURRENT_USER.email,
 		type: "text",
+		validationRule: "email"
 	},
 	{
 		label: "Телефон",
@@ -59,6 +64,7 @@ export const PROFILE_INPUTS: IBaseInputProps[] = [
 		placeholder: "+7 (900) 111-11-11",
 		defaultValue: CURRENT_USER.phone,
 		type: "text",
+		validationRule: "phone"
 	},
 ];
 
@@ -68,20 +74,23 @@ export const PASSWORD_INPUTS: IBaseInputProps[] = [
 		name: "old_password",
 		id: "old_password",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
-		type: "text",
+		type: "password",
+		validationRule: "password"
 	},
 	{
 		label: "Новый пароль",
 		name: "new_password",
 		id: "new_password",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
-		type: "text",
+		type: "password",
+		validationRule: "password"
 	},
 	{
 		label: "Повторите новый пароль",
 		name: "new_password-repeat",
 		id: "new_password-repeat",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
-		type: "text",
+		type: "password",
+		validationRule: "password"
 	},
 ];

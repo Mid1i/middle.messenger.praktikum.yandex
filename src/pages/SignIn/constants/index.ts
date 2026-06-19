@@ -6,6 +6,7 @@ export const SIGN_IN_INPUTS: IBaseInputProps[] = [
 		name: "login",
 		id: "login",
 		placeholder: "ivanivanov",
+		validationRule: "login"
 	},
 	{
 		label: "Пароль",
@@ -13,5 +14,6 @@ export const SIGN_IN_INPUTS: IBaseInputProps[] = [
 		id: "password",
 		placeholder: "● ● ● ● ● ● ● ● ● ● ● ●",
 		type: "password",
+		validationRule: "password"
 	},
 ];

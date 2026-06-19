@@ -1,4 +1,5 @@
 import type { IBaseBlockOwnProps } from "@/components/BaseBlock";
+import type { ValidationRule } from "@/types";
 
 import BaseBlock from "@/components/BaseBlock";
 
@@ -9,11 +10,11 @@ export interface IBaseInputProps extends IBaseBlockOwnProps {
 	name: string;
 	variant?: "primary" | "secondary";
 	type?: HTMLInputElement["type"];
+	validationRule?: ValidationRule;
 	defaultValue?: string;
 	placeholder?: string;
 	readonly?: boolean;
 	label?: string;
-	error?: string;
 }
 
 export default class BaseInput extends BaseBlock<IBaseInputProps> {

@@ -43,14 +43,21 @@
 						</ul>
 					</div>
 					<footer class="chat-window__footer">
-						<form class="chat-window__form">
+						{{#BaseForm className="chat-window__form" }}
 							<textarea 
 								class="chat-window__message-input base-text"
+								data-validation-rule="message"
 								placeholder="Сообщение"
 								aria-label="Сообщение"
 								name="message"
 								id="message"	
 							></textarea>
+							{{!-- <span
+								id="message-error"
+								class="base-input__error-text base-text base-text_size_xs"
+								data-error-for="message"
+								aria-live="polite"
+							></span> --}}
 							{{#BaseButton 
 								 ariaLabel="Прикрепить вложение"
 								 className="chat-window__attach-button" 
@@ -67,7 +74,7 @@
 							}}
 								<div class="chat-window__send-icon rect-size masked-block"></div>
 							{{/BaseButton}}
-						</form>
+						{{/BaseForm}}
 					</footer>
 				</section>
 			{{else}}

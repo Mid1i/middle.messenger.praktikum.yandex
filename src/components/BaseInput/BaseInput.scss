@@ -47,12 +47,12 @@
 			font-weight: inherit;
 		}
 
-		&:hover:not(:read-only) {
+		&:hover:not(:read-only, &_invalid) {
 			background: transparent;
 			border-color: var(--border-base-primary);
 		}
 
-		&:focus-visible:not(.base-input__input_invalid, :read-only) {
+		&:focus-visible:not(&_invalid, :read-only) {
 			background: transparent;
 			border-color: var(--base-input-border-active);
 		}
@@ -63,6 +63,10 @@
 
 		&_invalid {
 			border-color: var(--base-input-border-error);
+
+			&:hover {
+				background: transparent;
+			}
 		}
 	}
 

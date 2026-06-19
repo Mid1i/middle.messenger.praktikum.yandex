@@ -37,7 +37,7 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 		if (field instanceof HTMLInputElement || field instanceof HTMLTextAreaElement) {
 			this.validateField(field);
 		}
-	}
+	};
 
 	private handleSubmit = (event: Event) => {
 		event.preventDefault();
@@ -54,7 +54,7 @@ export default class BaseForm extends BaseBlock<IBaseFormProps> {
 		}
 
 		console.log(this.collectFormData(form));
-	}
+	};
 
 	private validateField(field: HTMLInputElement | HTMLTextAreaElement): boolean {
 		const rule = field.dataset.validationRule as ValidationRule | undefined;

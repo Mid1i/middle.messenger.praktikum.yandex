@@ -40,7 +40,7 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 			...this.props,
 			...props,
 			__children: [],
-			__refs: {}
+			__refs: {},
 		};
 
 		if (!this.componentDidUpdate(mergedProps)) {
@@ -56,7 +56,7 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 			if (key === "__children" || key === "__refs") {
 				return false;
 			}
-			
+
 			const _key = key as keyof Props;
 
 			return !Object.is(this.props[_key], newProps[_key]);

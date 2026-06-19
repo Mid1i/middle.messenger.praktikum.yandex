@@ -36,14 +36,31 @@ export default abstract class BaseBlock<Props extends IBaseBlockOwnProps> {
 	}
 
 	public setProps(props: Partial<Props>) {
-		this.props = {
+		const mergedProps = {
 			...this.props,
 			...props,
 			__children: [],
-			__refs: {},
+			__refs: {}
 		};
 
+		if (!this.componentDidUpdate(mergedProps)) {
+			return;
+		}
+
+		this.props = mergedProps;
 		this.render();
+	}
+
+	protected componentDidUpdate(newProps: Props): boolean {
+		return Object.keys(newProps).some((key) => {
+			if (key === "__children" || key === "__refs") {
+				return false;
+			}
+			
+			const _key = key as keyof Props;
+
+			return !Object.is(this.props[_key], newProps[_key]);
+		});
 	}
 
 	protected componentDidMount() {}

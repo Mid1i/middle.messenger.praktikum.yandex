@@ -1,8 +1,9 @@
 .profile-settings {
 	display: flex;
-	align-items: stretch;
 
-	height: 100%;
+	padding: 16px 16px 16px 144px;
+
+	min-height: 100%;
 	width: 100%;
 
 	&__content {
@@ -10,13 +11,12 @@
 		flex: 1 1 auto;
 		flex-direction: column;
 		gap: 112px;
-
-		padding: 16px;
-		padding-left: 0;
 	}
 
 	&__header {
 		position: relative;
+
+		flex: 0 0 auto;
 
 		height: 240px;
 		width: 100%;

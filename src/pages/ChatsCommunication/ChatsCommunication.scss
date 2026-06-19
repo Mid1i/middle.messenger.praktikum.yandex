@@ -1,9 +1,10 @@
 .chats-communication {
 	display: flex;
-	align-items: stretch;
 
 	height: 100%;
 	width: 100%;
+
+	padding: 16px 16px 16px 144px;
 
 	background: var(--background-base-secondary);
 
@@ -12,9 +13,6 @@
 		flex: 1 1 auto;
 		align-items: stretch;
 		gap: 16px;
-
-		padding: 16px;
-		padding-left: 0;
 	}
 }
 

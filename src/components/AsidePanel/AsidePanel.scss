@@ -1,6 +1,12 @@
 .aside-panel {
 	--base-avatar-size: 48px;
 
+	position: fixed;
+	top: 0px;
+	left: 0px;
+
+	height: 100%;
+
 	padding: 48px 36px 52px;
 
 	&__navigation {

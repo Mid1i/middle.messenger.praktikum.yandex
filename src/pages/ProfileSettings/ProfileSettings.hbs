@@ -1,11 +1,11 @@
 <main class="profile-settings">
-	{{> aside-panel activePage="profile" }}
+	{{{ AsidePanel activePage="profile" }}}
 	<div class="profile-settings__content">
 		{{#with currentUser}}
 			<header class="profile-settings__header">
 				<div class="profile-settings__header-wrapper">
 					<button class="profile-settings__header-avatar" type="button">
-						{{> base-avatar url="{{ avatar }}" }}
+						{{{ BaseAvatar url=avatar }}}
 						<span class="profile-settings__change-avatar base-text base-text_size_m">Поменять <br/> аватар</span>
 					</button>
 					<div class="profile-settings__header-info">
@@ -13,30 +13,30 @@
 						<span class="profile-settings__header-login base-text base-text_size_m">@{{ login }}</span>
 					</div>
 				</div>
-				{{#> base-button className="profile-settings__logout-button" }}
+				{{#BaseButton className="profile-settings__logout-button" }}
 					Выйти
 					<div class="profile-settings__logout-icon rect-size masked-block"></div>
-				{{/base-button}}
+				{{/BaseButton}}
 			</header>
 		{{/with}}
 		<div class="profile-settings__main">
 			<h1 class="profile-settings__title base-text base-text_size_xl base-text_weight_medium">Профиль</h1>
-			<form class="profile-settings__form">
-				{{#each config}}
-					{{> base-input this readonly=true variant="secondary" }}
+			{{#BaseForm className="profile-settings__form" }}
+				{{#each formSchema}}
+					{{{ BaseInput readonly=true variant="secondary" }}}
 				{{/each}}
-				{{#> base-button className="profile-settings__data-button" type="submit" }}
+				{{#BaseButton className="profile-settings__data-button" type="submit" }}
 					Изменить данные
-				{{/base-button}}
+				{{/BaseButton}}
 				<button class="profile-settings__password-button base-text base-text_size_m base-text_weight_medium" type="button">
 					Изменить пароль
 				</button>
-			</form>
+			{{/BaseForm}}
 		</div>
 	</div>
 
-	{{#> base-popup ariaLabel="Изменение аватара" }}
-		<form class="profile-settings__profile-popup profile-popup">
+	{{#BasePopup ariaLabel="Изменение аватара" }}
+		{{#BaseForm className="profile-settings__profile-popup profile-popup" }}
 			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Загрузите новый аватар пользователя</h3>
 			<label class="profile-popup__upload-field">
 				<div class="profile-popup__upload-icon rect-size masked-block"></div>
@@ -50,23 +50,23 @@
 					name="avatar"	
 				/>
 			</label>
-			{{#> base-button type="submit" }}
+			{{#BaseButton type="submit" }}
 				Сохранить
-			{{/base-button}}
-		</form>
-	{{/base-popup}}
+			{{/BaseButton}}
+		{{/BaseForm}}
+	{{/BasePopup}}
 
-	{{#> base-popup ariaLabel="Изменение пароля" }}
-		<form class="profile-settings__profile-popup profile-popup">
+	{{#BasePopup ariaLabel="Изменение пароля" }}
+		{{#BaseForm className="profile-settings__profile-popup profile-popup" }}
 			<h3 class="profile-popup__title base-text base-text_size_l base-text_weight-medium">Изменение пароля</h3>
 			<div class="profile-popup__form-fields">
-				{{#each passwordConfig }}
-					{{> base-input }}
+				{{#each passwordFormSchema }}
+					{{{ BaseInput }}}
 				{{/each}}
 			</div>
-			{{#> base-button type="submit" }}
+			{{#BaseButton type="submit" }}
 				Сохранить
-			{{/base-button}}
-		</form>
-	{{/base-popup}}
+			{{/BaseButton}}
+		{{/BaseForm}}
+	{{/BasePopup}}
 </main>

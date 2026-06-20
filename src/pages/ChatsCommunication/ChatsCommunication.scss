@@ -1,9 +1,10 @@
 .chats-communication {
 	display: flex;
-	align-items: stretch;
 
 	height: 100%;
 	width: 100%;
+
+	padding: 16px 16px 16px 144px;
 
 	background: var(--background-base-secondary);
 
@@ -12,9 +13,6 @@
 		flex: 1 1 auto;
 		align-items: stretch;
 		gap: 16px;
-
-		padding: 16px;
-		padding-left: 0px;
 	}
 }
 
@@ -26,7 +24,7 @@
 	height: 100%;
 	width: 384px;
 
-	padding: 16px 12px 0px;
+	padding: 16px 12px 0;
 
 	background: var(--background-base-primary);
 	border-radius: 24px;
@@ -38,7 +36,7 @@
 		align-items: center;
 		justify-content: space-between;
 
-		padding: 0px 12px;
+		padding: 0 12px;
 	}
 
 	&__add-icon {
@@ -53,7 +51,7 @@
 
 		position: relative;
 
-		padding: 0px 12px;
+		padding: 0 12px;
 	}
 
 	&__search-icon {
@@ -125,7 +123,7 @@
 	&__content {
 		flex: 1 1 auto;
 
-		min-height: 0px;
+		min-height: 0;
 	}
 
 	&__message-list {
@@ -171,9 +169,11 @@
 
 		resize: none;
 
-		transition: background 0.3s, border-color 0.3s;
+		transition:
+			background 0.3s,
+			border-color 0.3s;
 
-		@media(hover) {
+		@media (hover) {
 			&:hover {
 				background: var(--base-input-background);
 				border-color: transparent;
@@ -182,7 +182,7 @@
 
 		&:focus-visible {
 			background: transparent;
-			border-color: var(--base-input-border-active); 
+			border-color: var(--base-input-border-active);
 		}
 	}
 

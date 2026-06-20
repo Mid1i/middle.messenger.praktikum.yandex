@@ -6,7 +6,7 @@
 
 .base-input {
 	width: 100%;
-	
+
 	&_variant_primary {
 		display: flex;
 		flex-direction: column;
@@ -19,12 +19,17 @@
 		gap: 150px;
 
 		.base-input__label {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 
 	&__label {
 		margin-bottom: 8px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__input {
@@ -36,8 +41,10 @@
 		border: 1px solid transparent;
 		border-radius: var(--_base-input-border-radius);
 
-		transition: background 0.3s, border-color 0.3s;
-		
+		transition:
+			background 0.3s,
+			border-color 0.3s;
+
 		&::placeholder {
 			color: var(--base-input-placeholder);
 			font-family: inherit;
@@ -45,14 +52,14 @@
 			font-weight: inherit;
 		}
 
-		&:hover:not(:read-only) {
+		&:hover:not(:read-only, &_invalid) {
 			background: transparent;
 			border-color: var(--border-base-primary);
 		}
 
-		&:focus-visible:not(.base-input__input_invalid, :read-only) {
+		&:focus-visible:not(&_invalid, :read-only) {
 			background: transparent;
-			border-color: var(--base-input-border-active); 
+			border-color: var(--base-input-border-active);
 		}
 
 		&:read-only {
@@ -60,7 +67,11 @@
 		}
 
 		&_invalid {
-			border-color: var(--base-input-border-error); 
+			border-color: var(--base-input-border-error);
+
+			&:hover {
+				background: transparent;
+			}
 		}
 	}
 

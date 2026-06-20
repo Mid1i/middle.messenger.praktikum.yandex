@@ -10,21 +10,25 @@
 			{{ label }}
 		</span>
 	{{/if}}
-	<input
-		class="
-			base-input__input 
-			base-text 
-			{{#if error}} base-input__input_invalid {{/if}}
-		"
-		placeholder="{{ placeholder }}"
-		value="{{ defaultValue }}"
-		name="{{ name }}"
-		type="{{ set-default type "text" }}"
-		id="{{ id }}"
-		{{#if readonly}} readonly {{/if}}
-		{{#if error}} aria-invalid="true" aria-describedby="{{ id }}-error" {{/if}}
-	/>
-	{{#if error}}
-		<span id="{{ id }}-error" class="base-input__error-text base-text base-text_size_xs">{{ error }}</span>
-	{{/if}}
+	<div class="base-input__wrapper">
+		<input
+			class="base-input__input base-text"
+			placeholder="{{ placeholder }}"
+			data-validation-rule="{{ validationRule }}"
+			value="{{ defaultValue }}"
+			name="{{ name }}"
+			type="{{ set-default type "text" }}"
+			id="{{ id }}"
+			{{#if readonly}} readonly {{/if}}
+			aria-describedby="{{ id }}-error"
+		/>
+		<span 
+			id="{{ id }}-error" 
+			class="base-input__error-text base-text base-text_size_xs"
+			data-error-for="{{ id }}"
+			aria-live="polite"
+		>
+			{{ error }}
+		</span>
+	</div>
 </label>

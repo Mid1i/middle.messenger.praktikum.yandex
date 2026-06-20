@@ -4,7 +4,8 @@
 	&_variant_primary {
 		color: var(--base-link-text-primary);
 
-		&:hover, &:focus-visible {
+		&:hover,
+		&:focus-visible {
 			text-decoration: underline;
 		}
 	}

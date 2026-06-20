@@ -5,16 +5,17 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "sourceMap": true,
 
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
 
-    /* Linting */
     "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": false,
@@ -27,11 +28,14 @@
       "@/assets/*": ["./src/assets/*"],
       "@/components/*": ["./src/components/*"],
       "@/constants/*": ["./src/constants/*"],
+      "@/controllers/*": ["./src/controllers/*"],
       "@/helpers/*": ["./src/helpers/*"],
+      "@/models/*": ["./src/models/*"],
       "@/modules/*": ["./src/modules/*"],
       "@/pages/*": ["./src/pages/*"],
+      "@/services/*": ["./src/services/*"],
       "@/types/*": ["./src/types/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "vite.config.ts"]
 }

@@ -1,15 +1,8 @@
 import "./BaseInput.scss";
-import BaseInput from "./BaseInput.hbs?raw";
+import BaseInput from "./BaseInput";
+import template from "./BaseInput.hbs?raw";
 
-export interface IBaseInputProps {
-	label: string;
-	placeholder: string;
-	name: string;
-	id: string;
-	type?: string;
-	defaultValue?: string;
-	readonly?: boolean;
-	error?: string;
-}
+export type * from "./BaseInput";
 
+export { template };
 export default BaseInput;

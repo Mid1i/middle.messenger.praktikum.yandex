@@ -1,19 +1,19 @@
-*, 
+*,
 *::after,
 *::before {
-	border: 0px;
-	margin: 0px;
-	padding: 0px;
+	border: 0;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-}	
+}
 
-*:focus, 
+*:focus,
 *:active {
 	outline: none;
 	text-decoration: none;
 }
 
-html, 
+html,
 body {
 	background: var(--background-base-primary);
 	color: var(--text-base-primary);
@@ -24,13 +24,13 @@ body {
 	width: 100%;
 }
 
-a, 
+a,
 a:hover,
 a:visited {
 	text-decoration: none;
 }
 
-input, 
+input,
 button,
 textarea {
 	background: transparent;

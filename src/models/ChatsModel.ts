@@ -1,19 +1,4 @@
-import type { IUser } from "@/types";
-
-interface IChatsItem {
-	id: number;
-    title: string;
-    avatar: string;
-    unread_count: number;
-    created_by: number;
-    last_message: IMessage;
-};
-
-export interface IMessage {
-	user: IUser;
-	time: string;
-	content: string;
-};
+import type { IChatsItem, IMessage, IUser } from "@/types";
 
 export interface ICurrentChat extends IChatsItem {
 	history: IMessage[];
@@ -470,5 +455,5 @@ export const MESSAGES: IMessage[] = [
 
 export const CURRENT_CHAT: ICurrentChat = {
 	...CHATS[0],
-	history: MESSAGES
+	history: MESSAGES,
 };
